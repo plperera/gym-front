@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components"
-import primeiraImagem from "../assets/images/sushil-ghimire-DC5akQJyH4I-unsplash.jpg"
+import primeiraImagem from "../assets/images/sule-makaroglu-YFmvjO3TP_s-unsplash.jpg"
 import Background from "./Background"
 import { BsChevronDoubleDown } from 'react-icons/bs';
 
@@ -21,25 +21,21 @@ export default function SessionOne (){
                 <TextContainer>
 
                     <Title>
-                        <span>Leve sua rotina de treino para o próximo nível com <HighlightYellow>UpFitness!</HighlightYellow></span>
+                        <span>
+                            <HighlightYellow>Você</HighlightYellow> está pronto para elevar seu treino ao 
+                            <HighlightYellow> próximo nível</HighlightYellow> e conquistar o <HighlightYellow>corpo dos seus sonhos</HighlightYellow>?</span>
                     </Title>
 
                     <SubTitle>
-                    Descubra uma academia de <HighlightYellow>alta qualidade </HighlightYellow> 
-                    que pode <HighlightYellow>transformar</HighlightYellow> não 
-                    apenas seu corpo, mas também sua <HighlightYellow>mente</HighlightYellow>. Com os melhores instrutores 
-                    ao seu lado, você pode atingir seus <HighlightYellow>objetivos</HighlightYellow> de fitness e se sentir 
-                    mais confiante, mais forte e mais saudável do que nunca.
+                        Dê adeus aos treinos monótonos e limitados. Com nossas máquinas de <HighlightYellow>alta qualidade</HighlightYellow>, 
+                        você terá acesso a uma variedade de exercícios que trabalham todos os grupos musculares, 
+                        <HighlightYellow> garantindo</HighlightYellow> um treino <HighlightYellow>completo e eficiente</HighlightYellow>.
                     </SubTitle>   
 
                     <div>
-                        <Button>{"Saiba Mais >>>"}</Button>   
+                        <Button>{"Quero ver o Catálogo"}</Button>   
                     </div>   
                     
-                    <ReactIconContainer onClick={handleScroll}>
-                        <BsChevronDoubleDown/>    
-                    </ReactIconContainer>    
-
                 </TextContainer>
                 
             </UpContainer>
@@ -52,15 +48,12 @@ export default function SessionOne (){
 const moveDownAndChangeColor = keyframes`
   0% {
     transform: translateY(0);
-    color: #FFD014;
   }
   50% {
     transform: translateY(0.7vh);
-    color: #ffcc00;
   }
   100% {
     transform: translateY(0px);
-    color: #FFD014;
   }
 `;
 const ReactIconContainer = styled.div`
@@ -88,6 +81,8 @@ const HighlightYellow = styled.span`
 const UpContainer = styled.div`
     width: 100%;
     height: 100vh;
+
+    margin-top:-2vh;
     background-color: rgba(17, 17, 17, 0);
     z-index: 1;
     color: white;
@@ -116,5 +111,14 @@ const Button = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 25px;
+
+    animation: ${moveDownAndChangeColor} 1s ease-in-out infinite;
+
+    :hover{
+        background-color: #ffcc00;
+        color: #171717;
+        font-weight: bold;
+        animation: none;
+    }
     
 `

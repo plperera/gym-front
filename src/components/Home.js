@@ -15,9 +15,9 @@ export default function Home (){
 
             <SessionOne/>
 
-            <SessionTwo/>
+            {/* <SessionTwo/>
 
-            <SessionThree/>
+            <SessionThree/> */}
 
         </Container>
     )

@@ -11,7 +11,7 @@ export default function Menu (){
             
             <OptionsContainer>
                 <div>Quem Somos</div>
-                <div>Nossos Planos</div>
+                <div>Catálogo</div>
                 <div>Contato</div>
             </OptionsContainer>
         
