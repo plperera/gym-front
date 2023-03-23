@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Teste from "./Teste"
+import Home from "./components/Home"
 
 export default function App (){
  
@@ -7,7 +7,7 @@ export default function App (){
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Teste/>} />
+                    <Route path="/" element={<Home/>} />
                 </Routes>
             </BrowserRouter>
 
