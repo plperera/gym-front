@@ -20,9 +20,10 @@ export default function Menu (){
 }
 const Container = styled.div`
     width: 100%;
-    height: 10vh;
-    position: absolute;
+    height: 7vh;
+    position: fixed;
     z-index: 10;
+    background-color: #020202;
 
     display: flex;
     align-items: center;
@@ -31,7 +32,7 @@ const Container = styled.div`
     top: 0;
 `
 const Image = styled.img`
-  width: 8vh;
+  width: 6vh;
   margin-left: 8vw;
   cursor: pointer;
 `;

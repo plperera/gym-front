@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import BannerSession from "./BannerSession"
 import Menu from "./Menu"
-import SessionOne from "./SessionOne"
-import SessionThree from "./SessionThree"
-import SessionTwo from "./SessionTwo"
+import SessionFour from "./old/SessionFour"
+import SessionOne from "./old/SessionOne"
+import SessionThree from "./old/SessionThree"
+import SessionTwo from "./old/SessionTwo"
 
 export default function Home (){
     //"Leve sua rotina de treino para o próximo nível com UpFitness!"
@@ -15,9 +17,11 @@ export default function Home (){
 
             <SessionOne/>
 
-            {/* <SessionTwo/>
+            <SessionTwo/>
+          
+            <SessionThree/>
 
-            <SessionThree/> */}
+            <SessionFour/>
 
         </Container>
     )
