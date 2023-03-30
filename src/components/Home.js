@@ -12,9 +12,6 @@ export default function Home (){
 
     return(
         <Container>
-
-            <Menu/>
-
             <SessionOne/>
 
             <SessionTwo/>
@@ -22,7 +19,6 @@ export default function Home (){
             <SessionThree/>
 
             <SessionFour/>
-
         </Container>
     )
 }

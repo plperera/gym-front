@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 
-export default function Carousel ({ images }) {
+export default function Carrosel ({ images }) {
 
     const [current, setCurrent] = useState(0);
     const length = images.length;
@@ -36,13 +36,16 @@ export default function Carousel ({ images }) {
 `;
 
 const CarouselSlide = styled.div`
-  opacity: ${(props) => (props.isActive ? "1" : "0")};
-  transition: opacity 1s ease-in-out;
+  opacity: ${(props) => (props.isActive ? "1" : "0.95")};
+  transition: opacity 0.4s ease-in-out;
 `;
 
 const CarouselImage = styled.img`
-  width: 100vw; // Alterado para ter 100% de largura
-  max-height: 100%;
+  max-height: 50vh;
+  border-radius: 10px;
+  border: 5px solid #313131;
+  background-color: white;
+  border-radius:5px;
 `;
 
 const CarouselButton = styled.button`
@@ -51,10 +54,11 @@ const CarouselButton = styled.button`
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  font-size: 2rem;
+  font-size: 5vh;
   color: white;
   cursor: pointer;
   z-index: 10;
+  color: #313131;
 
   &:first-child {
     left: 1rem;
@@ -64,4 +68,3 @@ const CarouselButton = styled.button`
     right: 1rem;
   }
 `;
-
