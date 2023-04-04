@@ -1,24 +1,13 @@
-import styled, { keyframes } from "styled-components"
-import Categorias from "../Categorias";
+import styled from "styled-components"
 import IconePeito from "../../assets/images/peito.png"
 import IconeCosta from "../../assets/images/costas.png"
 import IconePerna from "../../assets/images/perna.png"
 import IconeCardio from "../../assets/images/cardio.png"
 import IconePeso from "../../assets/images/peso-livre.png"
 import BackgroundImage from "../../assets/images/background02.jpg"
+import Categorias from "./Categorias"
 
 export default function SessionTwo (){
-    //"Leve sua rotina de treino para o próximo nível com UpFitness!"
-    //"Eleve seu corpo e sua mente com a UpFitness."
-
-    const handleScroll = () => {
-        console.log("oi")
-        window.scrollTo({
-          top: window.innerHeight * 2, // rola para a altura da janela
-          behavior: 'smooth', // adiciona uma animação suave
-        });
-    };
-
     return(
         <>
             <Container background={BackgroundImage}>
@@ -57,10 +46,6 @@ const Title = styled.div`
     span{
         font-size: 38px;
     }
-`
-const HighlightYellow = styled.span`
-    color: #ffcc00;
-    font-weight: bold;
 `
 const ButtonContainer = styled.div`
     width: 91.5%;

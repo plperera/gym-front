@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import CartForms from "./CartForms"
-import CartProducts from "./CartProducts"
-import CartResume from "./CartResume"
+import CartForms from "../../components/cartPage/CartForms"
+import CartProducts from "../../components/cartPage/CartProducts"
+import CartResume from "../../components/cartPage/CartResume"
 
 export default function CartPage() {
 

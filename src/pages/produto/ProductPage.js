@@ -1,9 +1,10 @@
 import styled from "styled-components"
-import ProductBuyInfo from "./ProductBuyInfo"
+import ProductBuyInfo from "../../components/product/ProductBuyInfo"
 import MaquinaPeito from "../../assets/images/maquina-peito.jpg"
 import Maquina2 from "../../assets/images/maquina01.jpg"
-import Carrosel from "../Carrosel"
-import ProductEspecifcation from "./ProductEspecifcation"
+
+import ProductEspecifcation from "../../components/product/ProductEspecifcation"
+import Carrosel from "./Carrosel"
 
 export default function ProductPage() {
 

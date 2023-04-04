@@ -1,6 +1,5 @@
-import styled, { keyframes } from "styled-components"
-import { BsChevronDoubleDown } from 'react-icons/bs';
-import ThrendProduct from "../ThrendProduct";
+import styled from "styled-components"
+import ThrendProduct from "./ThrendProduct";
 import { useState } from "react";
 import MaquinaPeitoImage from "../../assets/images/maquina-peito.jpg"
 import EsteiraImage from "../../assets/images/esteira.jpg"
@@ -14,13 +13,6 @@ export default function SessionThree (){
 
     const [hasSelect, setHasSelect] = useState(optionsArray[0])
 
-    const handleScroll = () => {
-        console.log("oi")
-        window.scrollTo({
-          top: window.innerHeight * 2, 
-          behavior: 'smooth', 
-        });
-    };
     function selectOption(option){
         setHasSelect(option)
     }

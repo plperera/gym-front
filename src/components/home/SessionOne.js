@@ -4,8 +4,6 @@ import Background from "./Background"
 import { BsChevronDoubleDown } from 'react-icons/bs';
 
 export default function SessionOne (){
-    //"Leve sua rotina de treino para o próximo nível com UpFitness!"
-    //"Eleve seu corpo e sua mente com a UpFitness."
 
     const handleScroll = () => {
         window.scrollTo({

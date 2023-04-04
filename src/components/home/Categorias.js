@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import styled from "styled-components"
 
 export default function Categorias({imagem, titulo, subtitulo}){

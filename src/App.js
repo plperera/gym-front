@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import CartPage from "./components/cartPage/CartPage"
-import Home from "./components/Home"
 import Menu from "./components/Menu"
-import ProductPage from "./components/productPage/ProductPage"
+import CartPage from "./pages/carrinho/CartPage"
+import HomePage from "./pages/home/HomePage"
+import ProductPage from "./pages/produto/ProductPage"
 
 export default function App (){
  
@@ -11,7 +11,7 @@ export default function App (){
             <BrowserRouter>
                 <Menu/>
                 <Routes>
-                    <Route path="/" element={<Home/>} />
+                    <Route path="/" element={<HomePage/>} />
                     <Route path="/product" element={<ProductPage/>} />
                     <Route path="/cart" element={<CartPage/>} />
                 </Routes>

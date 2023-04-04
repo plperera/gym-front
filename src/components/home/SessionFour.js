@@ -1,11 +1,6 @@
-import styled, { keyframes } from "styled-components"
-import { BsChevronDoubleDown } from 'react-icons/bs';
-import ThrendProduct from "../ThrendProduct";
-import { useState } from "react";
-import MaquinaPeitoImage from "../../assets/images/maquina-peito.jpg"
-import EsteiraImage from "../../assets/images/esteira.jpg"
+import styled from "styled-components"
 import BackgroundImage from "../../assets/images/background03.jpg"
-import FormularioLandingPage from "../FormularioLandingPage";
+import FormularioLandingPage from "./FormularioLandingPage";
 export default function SessionFour (){
 
     return(
