@@ -1,5 +1,7 @@
 import styled from "styled-components"
+import CartForms from "./CartForms"
 import CartProducts from "./CartProducts"
+import CartResume from "./CartResume"
 
 export default function CartPage() {
 
@@ -13,22 +15,14 @@ export default function CartPage() {
 
                 <CartProducts/>
 
-                <div>
-                    <div>Dados do Destinatario</div>
-                    <div>Nome</div>
-                    <div>Telefone</div>
-                    <div>Email</div>
-                    <div>Estado</div>
-                    <div>Cidade</div>
-                </div>
-
+                <CartForms/>
+                
             </LeftContainer>
 
             <RightContainer>
-                <div>Resumo</div>
-                <div>Quantidade de produtos</div>
-                <div>Para entregar em</div>
-                <div>Quero Solicitar um orçamento</div>
+                
+                <CartResume/>
+
             </RightContainer>
 
         </Container>      
@@ -59,12 +53,13 @@ const Title = styled.div`
     justify-content: left;
 `
 const LeftContainer = styled.div`
-    width: 55%;
-    height: 85vh;
+    width: 45%;
+    min-height: 85vh;
+    height: 100%;
 
 `
 const RightContainer = styled.div`
-    width: 30%;
-    height: 85vh;
-    border: 4px solid blue;
+    width: 40%;
+    min-height: 85vh;
+    height: 100%;
 `

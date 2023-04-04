@@ -70,6 +70,7 @@ const ProductContainer = styled.div`
     justify-content: left;
     align-items: center;
     height: 15vh;
+    width: 100%;
     padding-left: 2vw;
     border-radius: 5px;
     margin-top: 2vh;
