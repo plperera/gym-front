@@ -6,8 +6,22 @@ import IconeCardio from "../../assets/images/cardio.png"
 import IconePeso from "../../assets/images/peso-livre.png"
 import BackgroundImage from "../../assets/images/background02.jpg"
 import Categorias from "./Categorias"
+import { useNavigate } from "react-router-dom"
 
 export default function SessionTwo (){
+
+    const navigate = useNavigate()
+
+    function changeScreen(to){
+
+        navigate(`/${to}`)
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', 
+        });
+        
+    }
     return(
         <>
             <Container background={BackgroundImage}>
@@ -18,16 +32,16 @@ export default function SessionTwo (){
 
                 <OptionsContainer>
 
-                    <Categorias imagem={IconePeito} titulo={"Peito"} subtitulo={"Tenha um peitoral invejável com as melhores Maquinas para essa região do corpo."}/>
-                    <Categorias imagem={IconeCosta} titulo={"Costas"} subtitulo={"Descubra as máquinas mais eficientes para um treino de costas inesquecível"}/>
-                    <Categorias imagem={IconePerna} titulo={"Membros Inferiores"} subtitulo={"Transforme suas pernas com os melhores exercícios para membros inferiores"}/>
-                    <Categorias imagem={IconeCardio} titulo={"Cardio"} subtitulo={"Supere seus limites com um treino de cardio intenso e eficaz"}/>
-                    <Categorias imagem={IconePeso} titulo={"Peso Livre"} subtitulo={"Fortaleça seu corpo e ganhe massa muscular com o treino de peso livre mais completo"}/>
+                    <Categorias imagem={IconePeito} titulo={"Peito"} subtitulo={"Tenha um peitoral invejável com as melhores Maquinas para essa região do corpo."} changeScreen={changeScreen}/>
+                    <Categorias imagem={IconeCosta} titulo={"Costas"} subtitulo={"Descubra as máquinas mais eficientes para um treino de costas inesquecível"} changeScreen={changeScreen}/>
+                    <Categorias imagem={IconePerna} titulo={"Membros Inferiores"} subtitulo={"Transforme suas pernas com os melhores exercícios para membros inferiores"} changeScreen={changeScreen}/>
+                    <Categorias imagem={IconeCardio} titulo={"Cardio"} subtitulo={"Supere seus limites com um treino de cardio intenso e eficaz"} changeScreen={changeScreen}/>
+                    <Categorias imagem={IconePeso} titulo={"Peso Livre"} subtitulo={"Fortaleça seu corpo e ganhe massa muscular com o treino de peso livre mais completo"} changeScreen={changeScreen}/>
                     
 
                 </OptionsContainer>
 
-                <ButtonContainer><div>Ver Mais</div></ButtonContainer>
+                <ButtonContainer onClick={() => changeScreen("products")}><div>Ver Mais</div></ButtonContainer>
 
             </Container>      
         </>

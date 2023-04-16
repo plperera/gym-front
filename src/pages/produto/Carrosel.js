@@ -20,7 +20,7 @@ export default function Carrosel ({ images }) {
             <CarouselButton onClick={prevSlide}>&#10094;</CarouselButton>
                 {images.map((image, index) => (
                     <CarouselSlide key={index} isActive={index === current}>
-                    {index === current && <CarouselImage src={image} alt="carousel" />}
+                    {index === current && <CarouselImage src={`https://drive.google.com/uc?export=view&id=${image.imageRef}`} alt="carousel" />}
                     </CarouselSlide>
                 ))}
             <CarouselButton onClick={nextSlide}>&#10095;</CarouselButton>

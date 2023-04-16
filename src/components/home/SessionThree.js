@@ -1,20 +1,54 @@
 import styled from "styled-components"
 import ThrendProduct from "./ThrendProduct";
-import { useState } from "react";
-import MaquinaPeitoImage from "../../assets/images/maquina-peito.jpg"
-import EsteiraImage from "../../assets/images/esteira.jpg"
+import { useState, useEffect } from "react";
+
 import BackgroundImage from "../../assets/images/background03.jpg"
+import api from "../../services/API";
+import { useNavigate } from "react-router-dom";
+
 export default function SessionThree (){
 
-    const optionsArray = ["Peito", "Costas", "Membros Inferiores", "Cardio", "Peso Livre"]
-
-    const textoLongoEsteira = "A família RX acaba de chegar em sua nova geração de esteiras! Com a maior área útil de lona do mercado (60 cm de largura) e motor 2HP, a nova RX8 NEW da Total Health é a esteira ideal para a prática de treinamentos avançados para todos os perfis de alunos. Design e durabilidade, com a qualidade da marca Total Health."
-    const textoLongoPeito = "A biomecânica perfeita e a robustez que garantem resultados superiores. O Decline Chest Press Articulado foi desenvolvido para quem espera muito mais de um treinamento de força."
-
-    const [hasSelect, setHasSelect] = useState(optionsArray[0])
+    const [hasSelect, setHasSelect] = useState(undefined)
+    const [categories, setCategories] = useState(undefined)
+    const [filterProducts, setFilterProducts] = useState(undefined)
+    const [ products, setProducts ] = useState(undefined);
+    const navigate = useNavigate()
 
     function selectOption(option){
+        const filterProducts = products.filter(item => {
+            return item.categoriasProduto.some(categoriaProduto => {
+                return categoriaProduto.categorias.tipo === option;
+            });
+        });
+        setFilterProducts(filterProducts)
         setHasSelect(option)
+    }
+
+    console.log(filterProducts)
+
+    async function getProducts(){
+        const response = await api.GetAllProducts()
+        const secondResponse = await api.GetAllCategories()
+        setCategories(secondResponse.data)
+        setProducts(response.data)
+        setFilterProducts(response.data)
+    }
+
+    useEffect(() => {
+
+        getProducts()
+
+    }, [])
+
+    function changeScreen(to){
+
+        navigate(`/${to}`)
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', 
+        });
+        
     }
 
     return(
@@ -27,30 +61,45 @@ export default function SessionThree (){
 
                 <ContainerOption>
 
-                    {optionsArray.map( e => 
-                        <ProductOption 
-                            onClick={() => selectOption(e)} 
-                            background={(hasSelect !== e) ? ("none"):("#ffcc00")}
-                            border={(hasSelect !== e) ? ("1px solid #ffcc00;"):("none")}
-                            borderRadius={(hasSelect !== e) ? ("0px"):("50px")}
-                            bold={(hasSelect !== e) ? ("400"):("700")}
-                            color={(hasSelect !== e) ? ("#FFFFFF"):("#000000")}
-                        >
-                            {e}
-                        </ProductOption>
-                    )}
+                    {
+                        categories ? (
+                            categories.map((e,i) => {
+                                if (i <= 5){
+                                    return <ProductOption 
+                                        onClick={() => selectOption(e.tipo)} 
+                                        background={(hasSelect !== e.tipo) ? ("none"):("#ffcc00")}
+                                        border={(hasSelect !== e.tipo) ? ("1px solid #ffcc00;"):("none")}
+                                        borderRadius={(hasSelect !== e.tipo) ? ("0px"):("50px")}
+                                        bold={(hasSelect !== e.tipo) ? ("400"):("700")}
+                                        color={(hasSelect !== e.tipo) ? ("#FFFFFF"):("#000000")}
+                                    >
+                                        {e.tipo}
+                                    </ProductOption>
+                                    }
+                                return <></>
+                            })
+                        ):(<></>)  
+                    }
   
                 </ContainerOption>   
 
                 <OptionsProducts>
-                    <ThrendProduct imagem={MaquinaPeitoImage} titulo={"Decline Chest Press Articulado"} subtitulo={textoLongoPeito}/>
-                    <ThrendProduct imagem={EsteiraImage} titulo={"Esteira Ergométrica RX8 NEW"} subtitulo={textoLongoEsteira}/>
-                    <ThrendProduct imagem={MaquinaPeitoImage} titulo={"Decline Chest Press Articulado"} subtitulo={textoLongoPeito}/>
-                    <ThrendProduct imagem={EsteiraImage} titulo={"Esteira Ergométrica RX8 NEW"} subtitulo={textoLongoEsteira}/>
+                {
+                    filterProducts ? (
+                        filterProducts.map((e,i) => {
+                            if (i <= 5){
+                                return <ThrendProduct id={e.id} imagem={e.imagensProduto[0].imageRef} titulo={e.nome} subtitulo={e.descricao}/>
+                            }
+                            return <></>
+                        })
+                    ):(<></>)
+                }
+                    
+                    
                 </OptionsProducts> 
 
                 <ContainerButton>
-                    <div>Ver Todos</div>
+                    <div onClick={() => changeScreen("products")}>Ver Todos</div>
                 </ContainerButton>
 
             </Container>

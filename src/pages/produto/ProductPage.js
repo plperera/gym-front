@@ -2,29 +2,47 @@ import styled from "styled-components"
 import ProductBuyInfo from "../../components/product/ProductBuyInfo"
 import MaquinaPeito from "../../assets/images/maquina-peito.jpg"
 import Maquina2 from "../../assets/images/maquina01.jpg"
+import { useState, useEffect } from "react";
 
 import ProductEspecifcation from "../../components/product/ProductEspecifcation"
 import Carrosel from "./Carrosel"
+import api from "../../services/API"
+import { useParams } from "react-router-dom";
 
 export default function ProductPage() {
 
+    const [ product, setProduct ] = useState(undefined);
+    const { productName } = useParams();
+
+    async function getProduct(){
+        const response = await api.GetProductById(productName)
+        setProduct(response.data)
+    }
+
+    useEffect(() => {
+
+        getProduct()
+
+    }, [])
 
     return(
-        <Container>
-            <ProductImageContainer>
-                {/* <img src={MaquinaPeito}/> */}
-                <Carrosel images={[MaquinaPeito, Maquina2]}/>
-            </ProductImageContainer>
+        product ? (
+            <Container>
+                <ProductImageContainer>
+                    {/* <img src={MaquinaPeito}/> */}
+                    <Carrosel images={product.imagensProduto}/>
+                </ProductImageContainer>
 
-            <ProductBuyInfoContainer>
-                <ProductBuyInfo/>
-            </ProductBuyInfoContainer>
+                <ProductBuyInfoContainer>
+                    <ProductBuyInfo category={product.categoriasProduto[0].categorias.tipo} title={product.nome} rate={product.rate}/>
+                </ProductBuyInfoContainer>
 
-            <ProductEspecifcationContainer>
-                <ProductEspecifcation/>
-            </ProductEspecifcationContainer>
-
-        </Container>      
+                <ProductEspecifcationContainer>
+                    <ProductEspecifcation largura={product.largura} comprimento={product.comprimento} altura={product.altura} peso={product.peso} arrayCategorias={product.categoriasProduto}/>
+                </ProductEspecifcationContainer>
+            </Container>      
+        ):(<Container>Carregando...</Container>)
+        
     )
 }
 const Container = styled.div`
@@ -32,6 +50,7 @@ const Container = styled.div`
     height: 100%;
     min-height: 100vh;
     background-color: #0A0A0A;
+    color: white;
     margin-top: 7vh;
     padding-top: 3.5vh;
     padding-left: 7vw;

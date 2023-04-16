@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { FaWeightHanging } from 'react-icons/fa';
 
-export default function ProductEspecifcation() {
+export default function ProductEspecifcation({largura, comprimento, altura, peso, arrayCategorias}) {
+
+    console.log(arrayCategorias)
 
 
     return(
@@ -9,21 +11,21 @@ export default function ProductEspecifcation() {
             <Title>Especificações</Title>
             <SubContainer>
                 <h2>Dimensões</h2>
-                <div>Largura: <span>61,00 cm</span></div>
-                <div>Altura: <span>61,00 cm</span></div>
-                <div>Comprimento: <span>61,00 cm</span></div>
+                <div>Largura: <span>{(largura/100).toFixed(2).replace(".",",")} cm</span></div>
+                <div>Altura: <span>{(altura/100).toFixed(2).replace(".",",")} cm</span></div>
+                <div>Comprimento: <span>{(comprimento/100).toFixed(2).replace(".",",")} cm</span></div>
             </SubContainer>
 
             <SubContainer>
                 <h2>Membros Trabalhados</h2>
-                <div><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>Peito</span></div>
-                <div><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>Biceps</span></div>
-                <div><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>Antebraço</span></div>
+                {arrayCategorias.map(e => 
+                    <div><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>{e.categorias.tipo}</span></div>
+                )}
             </SubContainer>
 
             <SubContainer>
                 <h2>Peso</h2>
-                <div><IconePeso/> <span>226,60 kg</span></div>
+                <div><IconePeso/> <span>{(peso/100).toFixed(2).replace(".",",")} kg</span></div>
             </SubContainer>
         </Container>      
     )

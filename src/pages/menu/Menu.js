@@ -1,27 +1,42 @@
 import styled from "styled-components"
 import LogoUpFitness from "../../assets/images/logo.png"
 import { RiShoppingCartFill } from 'react-icons/ri';
+import { useContext } from "react";
+import UserContext from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Menu (){
+
+    const { setUserData, userData } = useContext(UserContext)
+    const navigate = useNavigate()
+
+    function changeScreen(to){
+
+        navigate(`/${to}`)
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', 
+        });
+        
+    }
+
     return(
         <Container>
 
             <LogoContainer>
-                <Image src={LogoUpFitness}/>
+                <Image src={LogoUpFitness} onClick={ () => changeScreen("") }/>
             </LogoContainer>
             
             <OptionsContainer>
-                <div>Quem Somos</div>
-                <div>Catálogo</div>
+                <div>Quem Somos </div>
+                <div onClick={ () => changeScreen("products") }>Catálogo</div>
                 <div>Contato</div>
             </OptionsContainer>
 
-            <CardContainer>
+            <CardContainer onClick={ () => changeScreen("cart") }>
                 <CartIcon/>
                 <span>Ver Carrinho</span>
-                
-                {/* <CartDetails products={[]}/> */}
-                
             </CardContainer>
         
         </Container>

@@ -1,10 +1,14 @@
+import { useContext } from "react"
 import styled from "styled-components"
 import CartForms from "../../components/cartPage/CartForms"
 import CartProducts from "../../components/cartPage/CartProducts"
 import CartResume from "../../components/cartPage/CartResume"
+import UserContext from "../../context/UserContext"
 
 export default function CartPage() {
 
+    const { setUserData, userData } = useContext(UserContext)
+    
 
     return(
         <Container>

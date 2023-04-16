@@ -1,14 +1,12 @@
 import styled from "styled-components"
 
-export default function ProductBuyInfo() {
-
-
+export default function ProductBuyInfo({category, title, rate}) {
     return(
         <Container>
 
-            <InfoCategoria>PEITO</InfoCategoria>
-            <InfoNome>Decline Chest Press Articulado</InfoNome>
-            <InfoRate><span>★</span>5,0</InfoRate>
+            <InfoCategoria>{category.toUpperCase()}</InfoCategoria>
+            <InfoNome>{title}</InfoNome>
+            <InfoRate><span>★</span>{(rate/100).toFixed(1).replace(".",",")}</InfoRate>
             <Button>Quero um orçamento</Button>
             <InfoEmpresa><span>✔</span>Faça já seu orçamento totalmente de graça</InfoEmpresa>
             <InfoEmpresa><span>☏</span>Entraremos em contato o mais rápido possível</InfoEmpresa>

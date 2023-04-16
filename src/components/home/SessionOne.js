@@ -2,6 +2,7 @@ import styled, {keyframes} from "styled-components"
 import primeiraImagem from "../../assets/images/sule-makaroglu-YFmvjO3TP_s-unsplash.jpg"
 import Background from "./Background"
 import { BsChevronDoubleDown } from 'react-icons/bs';
+import { useNavigate } from "react-router-dom";
 
 export default function SessionOne (){
 
@@ -11,6 +12,19 @@ export default function SessionOne (){
           behavior: 'smooth',
         });
     };
+
+    const navigate = useNavigate()
+
+    function changeScreen(to){
+
+        navigate(`/${to}`)
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', 
+        });
+        
+    }
 
     return(
         <>
@@ -31,7 +45,7 @@ export default function SessionOne (){
                     </SubTitle>   
 
                     <div>
-                        <Button>{"Quero ver o Catálogo"}</Button>   
+                        <Button onClick={() => changeScreen("products")}>{"Quero ver o Catálogo"}</Button>   
                     </div>   
 
                     <ReactIconContainer onClick={handleScroll}>

@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
-import teste from '../../assets/images/supino01.jpg'
 
-export default function ThrendProduct({imagem, titulo, subtitulo, id}){
+export default function ProductCard({imagem, titulo, subtitulo, id}){
 
     const imagePath = `https://drive.google.com/uc?export=view&id=${imagem}`
     const navigate = useNavigate()
@@ -24,7 +23,7 @@ export default function ThrendProduct({imagem, titulo, subtitulo, id}){
             <img src={imagePath} alt={titulo}/>
             <Title>{titulo}</Title>
             <SubTitle>{subtitulo.slice(0, 80) + "..."}</SubTitle>
-            <Button>{"Quero um orçamento >"}</Button>
+            <Button>{"Ver Produto >"}</Button>
 
         </Container>
 
@@ -33,8 +32,8 @@ export default function ThrendProduct({imagem, titulo, subtitulo, id}){
 
 const Container = styled.div`  
 
-    height: 80%;
-    width: 15vw;
+    height: 32vh;
+    width: 13vw;
     border-radius: 10px;
     
     background-color: #FFFFFF;
@@ -43,7 +42,8 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
 
-    margin-right: 2vw;
+    margin-right: 1.8vw;
+    margin-bottom: 2.4vh;
 
     padding: 2vh;
 
