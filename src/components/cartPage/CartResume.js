@@ -1,7 +1,33 @@
 import styled from "styled-components"
 
-export default function CartResume({products}) {
+export default function CartResume({userData}) {
 
+    
+  
+    const handleClick = () => {
+
+        const message = "Olá, gostaria de fazer um orçamento sem compromisso para os seguinte(s) item(s): \n\n";
+        const phoneNumber = "35999351124";
+
+        const nome = "Pedro Pereira"
+        const address = "Lavras, Minas Gerais"
+        const contact = "(35) 99935-1124"
+        const email = "plp.leoncio@gmail.com"
+
+        const messageItems = userData.cart
+        .map((item) => {
+        return `id:${item.id} - ${item.productData.nome} - ( ${item.amount}x )`;
+        })
+        .join("\n");
+
+        const clientInfo = `\nEm nome de ${nome}, para entregar em ${address} \n\nDados para Contato: \nEmail: ${email} \nTelefone: ${contact}`
+
+        const finalMessage = message + messageItems + "\n" + clientInfo + "\n"
+
+        const encodedMessage = encodeURIComponent(finalMessage);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
+    };
 
     return(
         <Container>
@@ -12,7 +38,7 @@ export default function CartResume({products}) {
 
                 <InfoRow>
                     <div>Quantidade total de Produtos:</div>
-                    <div>60</div>
+                    <div>{userData?.cart?.reduce((accumulator, item) => {return accumulator + item.amount}, 0)}</div>
                 </InfoRow>
 
                 <InfoRow>
@@ -37,7 +63,7 @@ export default function CartResume({products}) {
 
                 <ButtonContainer>
 
-                    <ButtonStyled>Solicitar Orçamento</ButtonStyled>
+                    <ButtonStyled onClick={handleClick}>Solicitar Orçamento</ButtonStyled>
 
                     <InfoDetails>
                         <span>Entraremos em contato o mais rápido possível, enviando a Proposta para o <HighlightYellow>Email</HighlightYellow> e <HighlightYellow>Telefone</HighlightYellow> informado</span>

@@ -60,7 +60,7 @@ export default function CartPage() {
 
                     <RightContainer onClick={() => setRefresh(!refresh)}>
                         
-                        <CartResume/>
+                        <CartResume userData={userData}/>
 
                     </RightContainer>
                 </>

@@ -5,7 +5,6 @@ export default function CartProducts({ setUserData, userData, products, setRefre
 
     const [timeDelete, setTimeDelete] = useState(false)
     console.log(userData)
-    console.log(products)
 
     function updateAmount(type, i) {
         const updatedProducts = [...userData.cart]; 
@@ -31,7 +30,7 @@ export default function CartProducts({ setUserData, userData, products, setRefre
                 <ProductContainer willDelete={i === timeDelete} key={i}>
 
                     <LeftSideProduct>
-                        <img src={userData.cart[i].productData.image} alt={userData.cart[i].productData.nome} />
+                        <img src={`https://drive.google.com/uc?export=view&id=${userData.cart[i].productData.imagensProduto[0].imageRef}`} alt={userData.cart[i].productData.nome} />
                     </LeftSideProduct>
 
                     <RightSideProduct>
