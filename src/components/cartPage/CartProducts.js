@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "react-toastify";
 import styled from "styled-components"
 
 export default function CartProducts({ setUserData, userData, products, setRefresh, refresh }) {
@@ -11,7 +12,11 @@ export default function CartProducts({ setUserData, userData, products, setRefre
         if (type === "+") {
           updatedProducts[i].amount += 1; 
         } else if (type === "-") {
-          updatedProducts[i].amount -= 1; 
+            if(updatedProducts[i].amount === 1){
+                triggerDeleteAnimation(i)
+            } else {
+                updatedProducts[i].amount -= 1; 
+            }
         }
         setUserData({ ...userData, cart: updatedProducts });
     }
@@ -19,6 +24,14 @@ export default function CartProducts({ setUserData, userData, products, setRefre
         const updatedProducts = userData.cart.filter((product, i) => i !== index);
         setUserData({ ...userData, cart: updatedProducts });
         setRefresh(!refresh);
+        toast.dark(<CustomToast>Produto removido do Carrinho</CustomToast>)
+    }
+    function triggerDeleteAnimation(index) {
+        setTimeDelete(index);
+        setTimeout(() => {
+            removeProduct(index);
+            setTimeDelete(null);
+        }, 700);
     }
 
     return(
@@ -43,7 +56,7 @@ export default function CartProducts({ setUserData, userData, products, setRefre
                                 <div onClick={() => updateAmount("+",i)}>+</div>
                             </ProductAmout>
 
-                            <ProductDelete onClick={() => removeProduct(i)}>Tirar do Carrinho</ProductDelete>
+                            <ProductDelete onClick={() => triggerDeleteAnimation(i)}>Tirar do Carrinho</ProductDelete>
                         </ProductAmountManager>
                     </RightSideProduct>
                 </ProductContainer>
@@ -52,6 +65,10 @@ export default function CartProducts({ setUserData, userData, products, setRefre
         </Container>      
     )
 }
+const CustomToast = styled.div`
+    color: #E90000;
+    font-weight: 700;
+`
 const Container = styled.div`
 `
 const ProductContainer = styled.div`

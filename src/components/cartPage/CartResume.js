@@ -1,18 +1,18 @@
 import styled from "styled-components"
 
-export default function CartResume({userData}) {
+export default function CartResume({userData, form}) {
 
     
   
     const handleClick = () => {
 
         const message = "Olá, gostaria de fazer um orçamento sem compromisso para os seguinte(s) item(s): \n\n";
-        const phoneNumber = "35999351124";
+        const phoneNumber = "35999351124"
 
-        const nome = "Pedro Pereira"
-        const address = "Lavras, Minas Gerais"
-        const contact = "(35) 99935-1124"
-        const email = "plp.leoncio@gmail.com"
+        const nome = form?.name;
+        const address = `${form?.city}, ${form?.estado}`;
+        const cellphone = form?.cellphone;
+        const email = form?.email;
 
         const messageItems = userData.cart
         .map((item) => {
@@ -20,13 +20,17 @@ export default function CartResume({userData}) {
         })
         .join("\n");
 
-        const clientInfo = `\nEm nome de ${nome}, para entregar em ${address} \n\nDados para Contato: \nEmail: ${email} \nTelefone: ${contact}`
+        const clientInfo = `\nEm nome de ${nome}, para entregar em ${address} \n\nDados para Contato: \nEmail: ${email} \nTelefone: ${cellphone}`
 
         const finalMessage = message + messageItems + "\n" + clientInfo + "\n"
+        console.log(finalMessage)
 
-        const encodedMessage = encodeURIComponent(finalMessage);
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        window.open(whatsappURL, "_blank");
+        if (nome && form?.city && form?.estado && cellphone && email && messageItems){
+            const encodedMessage = encodeURIComponent(finalMessage);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        }
+
     };
 
     return(
@@ -43,22 +47,22 @@ export default function CartResume({userData}) {
 
                 <InfoRow>
                     <div>Para entregar em:</div>
-                    <div>Lavras, Minas Gerais</div>
+                    {(form?.city && form?.estado)?(<div>{`${form?.city}, ${form?.estado}`}</div>):(<div></div>)}
                 </InfoRow>
 
                 <InfoRow>
                     <div>Em nome de:</div>
-                    <div>Pedro Pereira</div>
+                    {(form?.name)?(<div>{`${form?.name}`}</div>):(<div></div>)}
                 </InfoRow>
 
                 <InfoRow>
                     <div>Telefone</div>
-                    <div>{"(35) 99935-1124"}</div>
+                    {(form?.cellphone)?(<div>{`${form?.cellphone}`}</div>):(<div></div>)}
                 </InfoRow>
 
                 <InfoRow>
                     <div>Email</div>
-                    <div>{"plp.leoncio@gmail.com"}</div>
+                    {(form?.email)?(<div>{`${form?.email}`}</div>):(<div></div>)}
                 </InfoRow>
 
                 <ButtonContainer>

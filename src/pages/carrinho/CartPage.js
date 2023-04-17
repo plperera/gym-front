@@ -5,12 +5,16 @@ import CartProducts from "../../components/cartPage/CartProducts"
 import CartResume from "../../components/cartPage/CartResume"
 import UserContext from "../../context/UserContext"
 import api from "../../services/API"
+import { useNavigate } from "react-router-dom";
+import { useCustomForm } from "../../hooks/useCustomForms";
 
 export default function CartPage() {
 
     const { setUserData, userData } = useContext(UserContext)
     const [ products, setProducts ] = useState(undefined);
     const [ refresh, setRefresh ] = useState(false);
+    const [ form, handleForm, setForm ] = useCustomForm();
+    const navigate = useNavigate()
 
     async function getProducts(array) {
         if (!array) {
@@ -54,17 +58,17 @@ export default function CartPage() {
 
                         <CartProducts setUserData={setUserData} userData={userData} products={products} setRefresh={setRefresh} refresh={refresh} getProducts={getProducts}/>
 
-                        <CartForms/>
+                        <CartForms form={form} handleForm={handleForm} setForm={setForm}/>
                         
                     </LeftContainer>
 
                     <RightContainer onClick={() => setRefresh(!refresh)}>
                         
-                        <CartResume userData={userData}/>
+                        <CartResume userData={userData} form={form}/>
 
                     </RightContainer>
                 </>
-            ):(<>Carregando...</>)}
+            ):(<EmptyCart onClick={ () => navigate("/products")}>Carrinho Vazio</EmptyCart>)}
         </Container>   
     )
 }
@@ -79,6 +83,15 @@ const Container = styled.div`
     justify-content:center;
     align-items: flex-start;
     flex-wrap: wrap;
+`
+const EmptyCart = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    font-size: 6vh;
+    color: #747474;
+    cursor: pointer;
 `
 const Title = styled.div`
     width: 85%;

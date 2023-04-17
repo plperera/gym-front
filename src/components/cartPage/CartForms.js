@@ -1,7 +1,18 @@
 import styled from "styled-components"
 
-export default function CartForms({products}) {
+export default function CartForms({products, form, setForm, handleForm}) {
 
+    function handleCellphone({ target: { value, name } }) {
+
+        const regex = /[^0-9]/g;
+
+        const newValue = value.replace(regex, '').replace(
+        /^(\d{2})(\d{4,5})(\d{4})$/,
+        "($1) $2-$3"
+        );;
+
+        setForm({ ...form, [name]: newValue });
+    }
 
     return(
         <Container>
@@ -11,12 +22,12 @@ export default function CartForms({products}) {
             <TwoInputsContainer>
                 <div>
                     <h3>Nome</h3>
-                    <InputStyle/>
+                    <InputStyle placeholder='Seu Nome' name='name' onChange={handleForm} value={form.name}/>
                 </div>
 
                 <div>
                     <h3>Telefone/Celular</h3>
-                    <InputStyle/>
+                    <InputStyle placeholder='Telefone para Contato' name='cellphone' onChange={handleCellphone} value={form.cellphone}/>
                 </div>
 
             </TwoInputsContainer>
@@ -24,19 +35,19 @@ export default function CartForms({products}) {
             <TwoInputsContainer>
                 <div>
                     <h3>Estado</h3>
-                    <InputStyle/>
+                    <InputStyle placeholder='Estado' name='estado' onChange={handleForm} value={form.estado}/>
                 </div>
 
                 <div>
                     <h3>Cidade</h3>
-                    <InputStyle/>
+                    <InputStyle placeholder='Cidade' name='city' onChange={handleForm} value={form.city}/>
                 </div>
 
             </TwoInputsContainer>
 
             <div>
                 <h3>Email</h3>
-                <InputStyle/>
+                <InputStyle placeholder='Email para Contato' name='email' onChange={handleForm} value={form.email}/>
             </div>
 
         </Container>      

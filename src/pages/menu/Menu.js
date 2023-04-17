@@ -31,7 +31,7 @@ export default function Menu (){
             <OptionsContainer>
                 <div>Quem Somos </div>
                 <div onClick={ () => changeScreen("products") }>Catálogo</div>
-                <div onClick={() => setUserData({})}>Contato</div>
+                <div>Contato</div>
             </OptionsContainer>
 
             <CardContainer onClick={ () => changeScreen("cart") }>
