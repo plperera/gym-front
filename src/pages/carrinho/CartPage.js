@@ -1,39 +1,75 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react";
 import styled from "styled-components"
 import CartForms from "../../components/cartPage/CartForms"
 import CartProducts from "../../components/cartPage/CartProducts"
 import CartResume from "../../components/cartPage/CartResume"
 import UserContext from "../../context/UserContext"
+import api from "../../services/API"
 
 export default function CartPage() {
 
     const { setUserData, userData } = useContext(UserContext)
-    
+    const [ products, setProducts ] = useState(undefined);
+    const [ refresh, setRefresh ] = useState(false);
 
+    async function getProducts(array) {
+        if (!array) {
+          return;
+        }
+      
+        const updatedCart = await Promise.all(
+          array.map(async (item) => {
+            const response = await api.GetProductById(item.id);
+            if (response.data !== []) {
+              return { ...item, productData: response.data };
+            } else {
+              return item;
+            }
+          })
+        );
+      
+        setUserData({ ...userData, cart: updatedCart });
+        setProducts([userData])
+    }
+
+    useEffect(() => {
+
+        try {
+            getProducts(userData.cart)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }, [refresh])
+
+
+    
     return(
         <Container>
+            {products?.length !== undefined ? (
+                <>
+                    <Title>Carrinho</Title>
 
-            <Title>Carrinho</Title>
+                    <LeftContainer>
 
-            <LeftContainer>
+                        <CartProducts setUserData={setUserData} userData={userData} products={products} setRefresh={setRefresh} refresh={refresh} getProducts={getProducts}/>
 
-                <CartProducts/>
+                        <CartForms/>
+                        
+                    </LeftContainer>
 
-                <CartForms/>
-                
-            </LeftContainer>
+                    <RightContainer onClick={() => setRefresh(!refresh)}>
+                        
+                        <CartResume/>
 
-            <RightContainer>
-                
-                <CartResume/>
-
-            </RightContainer>
-
-        </Container>      
+                    </RightContainer>
+                </>
+            ):(<>Carregando...</>)}
+        </Container>   
     )
 }
 const Container = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100%;
     min-height: 93vh;
     background-color: #0A0A0A;

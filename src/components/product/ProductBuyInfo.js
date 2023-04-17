@@ -1,13 +1,43 @@
 import styled from "styled-components"
+import { useContext } from "react";
+import UserContext from "../../context/UserContext";
+import { toast } from 'react-toastify';
 
-export default function ProductBuyInfo({category, title, rate}) {
+export default function ProductBuyInfo({category, title, rate, productId}) {
+    const { setUserData, userData } = useContext(UserContext)
+    console.log(userData)
+    function AddToCart(){
+
+        let newCart
+
+        if( userData.cart ){
+
+            if( userData.cart.filter(e => e.id === productId).length === 0){
+                newCart = [...userData?.cart, {id: productId, amount: 1}]
+                toast.dark("✅ Produto adcionado no Carrinho ✅")
+            } else {
+                newCart = [...userData?.cart]
+                toast.dark("⚠️  O Produto ja esta no Carrinho  ⚠️")
+            }
+           
+        } else {
+            newCart = [{id: productId, amount: 1}]
+            toast.dark("✅ Produto adcionado no Carrinho ✅")
+        }
+        
+        
+        setUserData({cart: newCart})
+        console.log(newCart)
+        console.log(userData)
+    }
+    
     return(
         <Container>
 
             <InfoCategoria>{category.toUpperCase()}</InfoCategoria>
             <InfoNome>{title}</InfoNome>
             <InfoRate><span>★</span>{(rate/100).toFixed(1).replace(".",",")}</InfoRate>
-            <Button>Quero um orçamento</Button>
+            <Button onClick={() => AddToCart()}>Quero um orçamento</Button>
             <InfoEmpresa><span>✔</span>Faça já seu orçamento totalmente de graça</InfoEmpresa>
             <InfoEmpresa><span>☏</span>Entraremos em contato o mais rápido possível</InfoEmpresa>
             

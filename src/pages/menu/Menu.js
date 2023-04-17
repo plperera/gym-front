@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import LogoUpFitness from "../../assets/images/logo.png"
 import { RiShoppingCartFill } from 'react-icons/ri';
-import { useContext } from "react";
-import UserContext from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../context/UserContext";
+import { useContext } from "react";
 
 export default function Menu (){
 
@@ -31,7 +31,7 @@ export default function Menu (){
             <OptionsContainer>
                 <div>Quem Somos </div>
                 <div onClick={ () => changeScreen("products") }>Catálogo</div>
-                <div>Contato</div>
+                <div onClick={() => setUserData({})}>Contato</div>
             </OptionsContainer>
 
             <CardContainer onClick={ () => changeScreen("cart") }>

@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import ProductBuyInfo from "../../components/product/ProductBuyInfo"
-import MaquinaPeito from "../../assets/images/maquina-peito.jpg"
-import Maquina2 from "../../assets/images/maquina01.jpg"
 import { useState, useEffect } from "react";
 
 import ProductEspecifcation from "../../components/product/ProductEspecifcation"
@@ -34,7 +32,7 @@ export default function ProductPage() {
                 </ProductImageContainer>
 
                 <ProductBuyInfoContainer>
-                    <ProductBuyInfo category={product.categoriasProduto[0].categorias.tipo} title={product.nome} rate={product.rate}/>
+                    <ProductBuyInfo category={product.categoriasProduto[0].categorias.tipo} title={product.nome} rate={product.rate} productId={product.id}/>
                 </ProductBuyInfoContainer>
 
                 <ProductEspecifcationContainer>

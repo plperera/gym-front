@@ -3,9 +3,6 @@ import { FaWeightHanging } from 'react-icons/fa';
 
 export default function ProductEspecifcation({largura, comprimento, altura, peso, arrayCategorias}) {
 
-    console.log(arrayCategorias)
-
-
     return(
         <Container>
             <Title>Especificações</Title>
@@ -18,8 +15,8 @@ export default function ProductEspecifcation({largura, comprimento, altura, peso
 
             <SubContainer>
                 <h2>Membros Trabalhados</h2>
-                {arrayCategorias.map(e => 
-                    <div><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>{e.categorias.tipo}</span></div>
+                {arrayCategorias.map((e,i) => 
+                    <div key={i}><SpanCaracterEspecial>✔</SpanCaracterEspecial> <span>{e.categorias.tipo}</span></div>
                 )}
             </SubContainer>
 

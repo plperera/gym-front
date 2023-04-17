@@ -6,12 +6,26 @@ import HomePage from "./pages/home/HomePage"
 import Menu from "./pages/menu/Menu"
 import ProductPage from "./pages/produto/ProductPage"
 import AllProducts from "./pages/allProducts/ProductsPage"
-
+import { ToastContainer } from "react-toastify"
 
 export default function App (){
  
     return(
         <>
+            
+            <ToastContainer 
+            position="top-right"
+            autoClose={3500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            />
+            
             <UserProvider>
                 <BrowserRouter>
                     <Menu/>

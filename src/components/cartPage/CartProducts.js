@@ -1,68 +1,59 @@
 import { useState } from "react"
 import styled from "styled-components"
-import MaquinaImage from "../../assets/images/Avatar-Maquina-Peito.png"
 
-export default function CartProducts() {
-    const [fakeProducts, setFakeProducts] = useState([{amount: 10}, {amount: 20}, {amount: 30}])
+export default function CartProducts({ setUserData, userData, products, setRefresh, refresh }) {
+
     const [timeDelete, setTimeDelete] = useState(false)
+    console.log(userData)
+    console.log(products)
 
     function updateAmount(type, i) {
-        const updatedProducts = [...fakeProducts]; 
+        const updatedProducts = [...userData.cart]; 
         if (type === "+") {
           updatedProducts[i].amount += 1; 
         } else if (type === "-") {
           updatedProducts[i].amount -= 1; 
         }
-        setFakeProducts(updatedProducts);
+        setUserData({ ...userData, cart: updatedProducts });
     }
     function removeProduct(index) {
-        if(timeDelete === false){
-            setTimeDelete(index)
-            const updatedProducts = fakeProducts.filter((product, i) => i !== index);
-
-            setTimeout(()=>{
-                setFakeProducts(updatedProducts);
-                setTimeDelete(false)
-            }, 700)
-        }        
+        const updatedProducts = userData.cart.filter((product, i) => i !== index);
+        setUserData({ ...userData, cart: updatedProducts });
+        setRefresh(!refresh);
     }
 
     return(
         
         <Container>
+            <h2>oi</h2>
             {
-            fakeProducts.map((e,i) => 
-                <ProductContainer willDelete={ () => i === timeDelete ? ("0"):("1")}>
+            userData.cart.map((e,i) => 
+                <ProductContainer willDelete={i === timeDelete} key={i}>
 
                     <LeftSideProduct>
-                        <img src={MaquinaImage}/>
+                        <img src={userData.cart[i].productData.image} alt={userData.cart[i].productData.nome} />
                     </LeftSideProduct>
 
                     <RightSideProduct>
-                        <ProductTitle>Decline Chest Press Articulado</ProductTitle>
+                        <ProductTitle>{userData.cart[i].productData.nome}</ProductTitle>
                         <ProductAmountManager>
 
                             <ProductAmout>
                                 <div onClick={() => updateAmount("-",i)}>-</div>
-                                <Amount>{fakeProducts[i].amount}</Amount>
+                                <Amount>{userData?.cart[i]?.amount}</Amount>
                                 <div onClick={() => updateAmount("+",i)}>+</div>
                             </ProductAmout>
 
                             <ProductDelete onClick={() => removeProduct(i)}>Tirar do Carrinho</ProductDelete>
                         </ProductAmountManager>
                     </RightSideProduct>
-                   
                 </ProductContainer>
-
             )
             }
         </Container>      
     )
 }
 const Container = styled.div`
-
-    
-
 `
 const ProductContainer = styled.div`
     background-color: #F3F3F3;
@@ -74,8 +65,8 @@ const ProductContainer = styled.div`
     padding-left: 2vw;
     border-radius: 5px;
     margin-top: 2vh;
-    opacity: ${props => props.willDelete};
-    transition: .7s ease-in-out !important;
+    transform: ${props => (props.willDelete ? "scale(0)" : "scale(1)")};
+    transition: transform 0.7s ease-in-out !important;
 `
 const LeftSideProduct = styled.div`
 
