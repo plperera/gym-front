@@ -10,11 +10,14 @@ function GetAllCategories() {
 function GetProductById(id) {
   return axios.get(`${BASE_URL}/product/${id}`);
 }
-
+function Login(body) {
+  return axios.post(`${BASE_URL}/auth/sign-in`, body)
+}
 const api = {
   GetAllProducts,
   GetAllCategories,
-  GetProductById
+  GetProductById,
+  Login
 };
 
 export default api;
