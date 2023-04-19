@@ -2,12 +2,9 @@ import styled from "styled-components"
 import LogoUpFitness from "../../assets/images/logo.png"
 import { RiShoppingCartFill } from 'react-icons/ri';
 import { useNavigate } from "react-router-dom";
-import UserContext from "../../context/UserContext";
-import { useContext } from "react";
 
 export default function Menu (){
 
-    const { setUserData, userData } = useContext(UserContext)
     const navigate = useNavigate()
 
     function changeScreen(to){
