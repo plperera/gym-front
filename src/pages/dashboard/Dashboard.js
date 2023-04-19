@@ -1,60 +1,74 @@
 import styled from "styled-components"
-import LogoUpFitness from "../../assets/images/logo.png"
-import { FaUserShield } from 'react-icons/fa';
-import { AiOutlineLink } from 'react-icons/ai';
-import { useCustomForm } from "../../hooks/useCustomForms";
-import api from "../../services/API";
-import { useContext, useState } from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
+import DashboardOption from "../../components/dashboard/DashboardOption"
+import { AiOutlineAppstoreAdd } from 'react-icons/ai';
+import { MdManageSearch, MdCreateNewFolder } from 'react-icons/md';
+import { RiFolderSettingsFill } from 'react-icons/ri';
+import { TbTimeline } from 'react-icons/tb';
+import { useState } from "react";
+import NewProduct from "../../components/dashboard/NewProduct";
+import ManageProducts from "../../components/dashboard/ManageProducts";
+import { useEffect } from "react";
 
 export default function Dashboard (){
 
+    const [pageSelector, setPageSelector] = useState(false)
+    useEffect(()=>{
+        console.log(pageSelector)
+    }, [pageSelector])
     return(
         <>       
             <Container>
-               <Title>Dashboard</Title>
+                <Title showArrow={!!pageSelector} onClick={() => setPageSelector(undefined)}>Admin Dashboard <span>{"(clique para voltar)"}</span></Title>
+
+                {(!!pageSelector) ? (pageSelector):(<>
+
+                    <OptionsContainer>
+                        <DashboardOption Icon={<AiOutlineAppstoreAdd/>} Title={"Novo Produto"} setPageSelector={setPageSelector} ComponentRef={<NewProduct/>} />
+                        <DashboardOption Icon={<MdCreateNewFolder/>} Title={"Nova Categoria"} setPageSelector={setPageSelector} ComponentRef={<NewProduct/>} />
+                        <DashboardOption Icon={<MdManageSearch/>} Title={"Gerenciar Produtos"} setPageSelector={setPageSelector} ComponentRef={<ManageProducts/>} />
+                        <DashboardOption Icon={<RiFolderSettingsFill/>} Title={"Gerenciar Categorias"} setPageSelector={setPageSelector} ComponentRef={undefined} />
+                        <DashboardOption Icon={<TbTimeline/>} Title={"Em breve..."}/>
+                    </OptionsContainer>
+
+                </>)}
+               
             </Container>
         </>
     )
 }
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
-    padding-top: 7vh;
-    
+    min-height: 100vh;
+    max-height: 100%;
+    padding-top: 12vh;
+    padding-left: 7vw;
     background-color: #0F0F0F;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: start;
     flex-direction: column;
-`
-const LoginContainer = styled.div`
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 75%;
-    width: 30vw;
-    background-color: #171717;
-    border-radius: 5px;
 `
 const Title = styled.div`
-    font-size: 20vh;
-    color: #ababab;
-`
-const ButtonStyle = styled.div`
-    width: 80%;
-    height: 7vh;
-    background-color: #ffcc00;
-    margin-top: 3.3vh;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+    font-size: 5vh;
+    color: #FFFFFF;
     cursor: pointer;
+    span {
+        display: ${props => props.showArrow ? ("initial"):("none")};
+        color: #5A5A5A;
+        font-size: 1.8vh;
+    }
+`
+const OptionsContainer = styled.div`
+    margin-top: 4vh;
+    width: 85%;
+    height: 30vh;
+    display: flex;
+    align-items: left;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
 `
 const InputStyle = styled.input`
     margin-top: 1vh;
