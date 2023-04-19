@@ -32,31 +32,3 @@ const Container = styled.div`
     justify-content: center;
     cursor: pointer;
 `
-const InputStyle = styled.input`
-    
-    margin-top: 1.8vh;
-    margin-right: 1.5vw;
-    height: 4vh;
-    width: 70%;
-    text-decoration: none;
-    opacity: 1;
-    border: none;
-    border-bottom: 0.5vh #ababab solid;
-    font-size: 14px;
-    color: #FFFFFF;
-
-    padding-left: 1.6em;
-    padding-right: 0;
-    outline: none;
-    background: #272727;
-    border-radius: 5px;
-
-    ::placeholder{
-        color: #9b9b9b;
-        opacity: 1;
-    }
-    :focus {
-        border-bottom: 0.5vh #ffcc00 solid;
-    }
-    
-`

@@ -70,29 +70,3 @@ const OptionsContainer = styled.div`
     flex-wrap: wrap;
     overflow: hidden;
 `
-const InputStyle = styled.input`
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    height: 6vh;
-    width: 80%;
-    text-decoration: none;
-    opacity: 1;
-    border: none;
-    border-bottom: 0.4vh #ababab solid;
-    font-size: 14px;
-    color: #FFFFFF;
-
-    padding-left: 1.6em;
-    padding-right: 0;
-    outline: none;
-    background: #272727;
-    border-radius: 5px;
-
-    ::placeholder{
-        color: #9b9b9b;
-        opacity: 1;
-    }
-    :focus {
-        border-bottom: 0.4vh #ffcc00 solid;
-    }
-`
