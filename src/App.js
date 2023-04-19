@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { UserProvider } from "./context/UserContext"
 import CartPage from "./pages/carrinho/CartPage"
 import Footer from "./pages/footer/Footer"
@@ -7,6 +7,11 @@ import Menu from "./pages/menu/Menu"
 import ProductPage from "./pages/produto/ProductPage"
 import AllProducts from "./pages/allProducts/ProductsPage"
 import { ToastContainer } from "react-toastify"
+import Login from "./pages/auth/Auth"
+import AuthContext, { AuthProvider } from "./context/AuthContext"
+import { useContext } from "react"
+import Dashboard from "./pages/dashboard/Dashboard"
+import useToken from "./hooks/useToken"
 
 export default function App (){
  
@@ -27,18 +32,31 @@ export default function App (){
             />
             
             <UserProvider>
-                <BrowserRouter>
-                    <Menu/>
-                    <Routes>
-                        <Route path="/" element={<HomePage/>} />
-                        <Route path="/product/:productName" element={<ProductPage/>} />
-                        <Route path="/products" element={<AllProducts/>} />
-                        <Route path="/cart" element={<CartPage/>} />
-                    </Routes>
-                    <Footer/>
-                </BrowserRouter>
+                <AuthProvider>
+                    <BrowserRouter>
+                        <Menu/>
+                        <Routes>
+                            <Route path="/" element={<HomePage/>} />
+                            <Route path="/product/:productName" element={<ProductPage/>} />
+                            <Route path="/products" element={<AllProducts/>} />
+                            <Route path="/cart" element={<CartPage/>} />
+                            <Route path="/admin/login" element={<Login/>} />
+                            <Route path="/admin/dashboard" element={<ProtectedRouteGuard><Dashboard/></ProtectedRouteGuard>} />
+                        </Routes>
+                        <Footer/>
+                    </BrowserRouter>
+                </AuthProvider>
             </UserProvider>
         </>
     )
 }
 
+function ProtectedRouteGuard({ children }) {
+    const token = useToken();
+
+    if (!token) {
+      return <Navigate to="/admin/login" />;
+    }
+  
+    return <>{children}</>;
+  }
