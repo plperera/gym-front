@@ -14,6 +14,11 @@ export default function Login (){
     const [ form, handleForm ] = useCustomForm();
     const { setAuthData } = useContext(AuthContext)
 
+    function handleKeyPress (e){
+        if (e.key === 'Enter') {
+            submitForm();
+        }
+    }
     const navigate = useNavigate()
 
     async function submitForm(){
@@ -36,7 +41,7 @@ export default function Login (){
                 <LoginContainer>
                     <Title><FaUserShield/></Title>
                     <InputStyle placeholder="Email" value={form.email} name="email" onChange={handleForm}/>
-                    <InputStyle placeholder="Senha" value={form.password} name="password" onChange={handleForm} type="password"/>
+                    <InputStyle placeholder="Senha" value={form.password} name="password" onChange={handleForm} type="password" onKeyPress={handleKeyPress}/>
                     <ButtonStyle onClick={() => submitForm()}>Entrar</ButtonStyle>
 
                 </LoginContainer>
