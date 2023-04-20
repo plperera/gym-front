@@ -8,6 +8,7 @@ import { useState } from "react";
 import NewProduct from "../../components/dashboard/NewProduct";
 import ManageProducts from "../../components/dashboard/ManageProducts";
 import { useEffect } from "react";
+import NewCategoty from "../../components/dashboard/NewCatogory";
 
 export default function Dashboard (){
 
@@ -24,7 +25,7 @@ export default function Dashboard (){
 
                     <OptionsContainer>
                         <DashboardOption Icon={<AiOutlineAppstoreAdd/>} Title={"Novo Produto"} setPageSelector={setPageSelector} ComponentRef={<NewProduct/>} />
-                        <DashboardOption Icon={<MdCreateNewFolder/>} Title={"Nova Categoria"} setPageSelector={setPageSelector} ComponentRef={<NewProduct/>} />
+                        <DashboardOption Icon={<MdCreateNewFolder/>} Title={"Nova Categoria"} setPageSelector={setPageSelector} ComponentRef={<NewCategoty/>} />
                         <DashboardOption Icon={<MdManageSearch/>} Title={"Gerenciar Produtos"} setPageSelector={setPageSelector} ComponentRef={<ManageProducts/>} />
                         <DashboardOption Icon={<RiFolderSettingsFill/>} Title={"Gerenciar Categorias"} setPageSelector={setPageSelector} ComponentRef={undefined} />
                         <DashboardOption Icon={<TbTimeline/>} Title={"Em breve..."}/>

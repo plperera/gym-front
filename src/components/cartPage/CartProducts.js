@@ -37,7 +37,6 @@ export default function CartProducts({ setUserData, userData, products, setRefre
     return(
         
         <Container>
-            <h2>oi</h2>
             {
             userData.cart.map((e,i) => 
                 <ProductContainer willDelete={i === timeDelete} key={i}>
