@@ -40,7 +40,7 @@ const InputStyle = styled.input`
     opacity: 1;
     border: none;
     border-bottom: 0.5vh #ababab solid;
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #FFFFFF;
 
     padding-left: 1.6em;
@@ -62,7 +62,7 @@ const ImageRefContainer = styled.div`
     margin-top: 1.8vh;
     height: 4vh;
     width: 30%;
-    font-size: 14px;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     color: #FFFFFF;
     border: ${props => props.isValid ? ("1px solid #00DF30"):("1px solid #1D1D1D")};

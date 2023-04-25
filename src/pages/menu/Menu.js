@@ -61,7 +61,7 @@ const LogoContainer = styled.div`
     color: white;
 `
 const OptionsContainer = styled.div`
-    font-size: 17px;
+    font-size: 1.1rem;
     font-weight: bold;
     color: white;
 
@@ -100,12 +100,12 @@ const CardContainer = styled.div`
     }
     span {
         text-align: center;
-        font-size: 1.6vh;
+        font-size: 1rem;
         margin-left: .6vw;
     }
 `
 const CartIcon = styled(RiShoppingCartFill)`
-    font-size: 2.8vh;
+    font-size: 1.8rem;
     transition: all ease 0s !important;
     
 `

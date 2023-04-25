@@ -54,7 +54,7 @@ const CarouselButton = styled.button`
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  font-size: 5vh;
+  font-size: 3rem;
   color: white;
   cursor: pointer;
   z-index: 10;

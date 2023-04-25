@@ -52,7 +52,7 @@ const ProductOption = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.7vh;
+    font-size: 1rem;
     user-select: none;
 
     color: ${props => props.color};
@@ -71,5 +71,5 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 3vh;
+    font-size: 2rem;
 `

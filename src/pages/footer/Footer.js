@@ -82,7 +82,7 @@ const SubInfoContainer = styled.div`
 
 `
 const ReactIconContainer = styled.div`
-    font-size: 3vh;
+    font-size: 2rem;
     color: #FFFFFF;
 
     display: flex;
@@ -93,7 +93,7 @@ const ReactIconContainer = styled.div`
 const LocalDetails = styled.div`
     width: 40%;
     color: #FFFFFF;
-    font-size: 1.5vh;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: right;

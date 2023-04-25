@@ -71,7 +71,7 @@ const ContainerInput = styled.div`
         opacity: 1;
         border: none;
         border-bottom: 0.4vh #ababab solid;
-        font-size: 14px;
+        font-size: 0.8rem;
         color: #FFFFFF;
 
         padding-left: 1.6em;
@@ -101,10 +101,11 @@ const ContainerMensagem = styled.div`
         opacity: 1;
         border: none;
         border-bottom: 0.4vh #ababab solid;
-        font-size: 14px;
+        font-size: 1rem;
         color: #FFFFFF;
         padding-left: 1.6em;
         padding-right: 0;
+        padding-top: 1.6vh;
         outline: none;
         background: #272727;
         border-radius: 5px;

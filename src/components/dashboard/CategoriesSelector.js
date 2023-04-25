@@ -18,7 +18,7 @@ const Container = styled.div`
     display: flex;
     width: 10vw;
     height: 5vh;
-    font-size: 2.2vh;
+    font-size: 1.4rem;
     color: "#FFFFFF";
     border: 2px solid;
     font-weight: ${props => props.isSelected ? ("700"):("500")};

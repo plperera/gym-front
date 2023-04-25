@@ -39,7 +39,7 @@ const OptionIcon = styled.div`
     align-items: center;
     justify-content: center;
     width: 20%;
-    font-size:5vh;
+    font-size:3.4rem;
     margin-right: 2vw;
 `
 const OptionTitle = styled.div`
@@ -47,5 +47,5 @@ const OptionTitle = styled.div`
     align-items: center;
     justify-content: left;
     width: 80%;
-    font-size: 3vh;
+    font-size: 1.9rem;
 `

@@ -109,7 +109,7 @@ export default function SessionThree (){
 const ContainerButton = styled.div`
     width: 91.5%;
     height: 50px;
-    font-size: 22px;
+    font-size: 1.4rem;
     
     display: flex;
     align-items: center;
@@ -136,7 +136,7 @@ const ContainerButton = styled.div`
 const HighlightYellow = styled.span`
     color: #ffcc00;
     font-weight: bold;
-    font-size: 4.5vh !important;
+    font-size: 2.4rem !important;
 
 `
 const ContainerOption = styled.div`
@@ -161,7 +161,7 @@ const ProductOption = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.7vh;
+    font-size: 1.2rem;
 
     color: ${props => props.color};
     border-radius: ${props => props.borderRadius};
@@ -188,7 +188,7 @@ const OptionsProducts = styled.div`
 const Title = styled.div`
     width: 100%;
     span{
-        font-size: 4vh;
+        font-size: 2.4rem;
     }
 `
 const Container = styled.div`

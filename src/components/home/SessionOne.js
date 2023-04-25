@@ -74,20 +74,20 @@ const moveDownAndChangeColor = keyframes`
 `;
 const ReactIconContainer = styled.div`
     color: white;
-    font-size: 60px;
+    font-size: 4rem;
     animation: ${moveDownAndChangeColor} 1s ease-in-out infinite;
     margin-top: 10vh;
     cursor: pointer;
 `
 const Title = styled.div`
     span{
-        font-size: 38px;
+        font-size: 2.4rem;
     }
 `
 const SubTitle = styled.div`
     
     margin-top: 7vh;
-    font-size: 38px;
+    font-size: 2.2rem;
     
 `
 const HighlightYellow = styled.span`
@@ -126,7 +126,7 @@ const Button = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 1.6rem;
 
     :hover{
         background-color: #ffcc00;

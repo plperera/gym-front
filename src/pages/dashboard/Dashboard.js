@@ -51,13 +51,13 @@ const Container = styled.div`
     flex-direction: column;
 `
 const Title = styled.div`
-    font-size: 5vh;
+    font-size: 3rem;
     color: #FFFFFF;
     cursor: pointer;
     span {
         display: ${props => props.showArrow ? ("initial"):("none")};
         color: #5A5A5A;
-        font-size: 1.8vh;
+        font-size: 1.2rem;
     }
 `
 const OptionsContainer = styled.div`

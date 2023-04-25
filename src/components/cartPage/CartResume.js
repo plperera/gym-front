@@ -1,9 +1,6 @@
 import styled from "styled-components"
 
 export default function CartResume({userData, form}) {
-
-    
-  
     const handleClick = () => {
 
         const message = "Olá, gostaria de fazer um orçamento sem compromisso para os seguinte(s) item(s): \n\n";
@@ -107,7 +104,7 @@ const InfoRow = styled.div`
     margin-bottom: 1.3vh;
     display: flex;
     justify-content: left;
-    font-size: 1.6vh;
+    font-size: 1rem;
     border-bottom: 3px solid #3F3F3F;
     height: 3vh;
 
@@ -131,7 +128,7 @@ const InfoRow = styled.div`
 `
 const Title = styled.h3`
     text-align: center;
-    font-size: 2.45vh;
+    font-size: 1.8rem;
     margin-bottom: 2vh;
     font-weight: 700;
 `;
@@ -149,8 +146,8 @@ const ButtonStyled = styled.div`
     height: 5vh;
     border-radius: 10px;
     background-color: #44B145;
-    font-size: 2.4vh;
-    font-weight:700;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: white;
     cursor: pointer;
     display: flex;
@@ -171,8 +168,8 @@ const InfoDetails = styled.div`
     text-align: center;
     margin-top: 1vh;
     font-weight: 700;
-    font-size: 1.4vh;
-    letter-spacing: .12vw;
+    font-size: 1rem;
+    letter-spacing: .06vw;
     color: #F5F5F5;
     span {
         margin-top: 3vh;

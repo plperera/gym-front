@@ -42,7 +42,7 @@ const EmptyContainer = styled.div`
     align-items: center;
     height: 6vh;
     width: 25vw;
-    font-size: 1.6vh;
+    font-size: 122rem;
 
 `
 const FilledContainer = styled.div`

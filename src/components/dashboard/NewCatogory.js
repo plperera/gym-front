@@ -60,7 +60,7 @@ const Container = styled.div`
     color: #FFFFFF;
 `
 const Title = styled.h3`
-    font-size: 2.6vh;
+    font-size: 1.8rem;
     margin-bottom: 2vh;
     margin-top: 4.5vh;
 `
@@ -73,7 +73,7 @@ const InputStyle = styled.input`
     opacity: 1;
     border: none;
     border-bottom: 0.5vh #ababab solid;
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #FFFFFF;
 
     padding-left: 1.6em;
@@ -104,7 +104,7 @@ const ButtonStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 1.6rem;
 
     :hover{
         background-color: #ffcc00;

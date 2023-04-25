@@ -72,12 +72,14 @@ const LoginContainer = styled.div`
     border-radius: 5px;
 `
 const Title = styled.div`
-    font-size: 20vh;
+    font-size: 11rem;
     color: #ababab;
 `
 const ButtonStyle = styled.div`
     width: 80%;
     height: 7vh;
+    font-size: 1.6rem;
+    font-weight: 700;
     background-color: #ffcc00;
     margin-top: 3.3vh;
     border-radius: 5px;
@@ -95,7 +97,7 @@ const InputStyle = styled.input`
     opacity: 1;
     border: none;
     border-bottom: 0.4vh #ababab solid;
-    font-size: 14px;
+    font-size: 0.95rem;
     color: #FFFFFF;
 
     padding-left: 1.6em;

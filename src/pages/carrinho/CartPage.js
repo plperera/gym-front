@@ -13,6 +13,7 @@ export default function CartPage() {
     const { setUserData, userData } = useContext(UserContext)
     const [ products, setProducts ] = useState(undefined);
     const [ refresh, setRefresh ] = useState(false);
+    const [ verify, setVerify ] = useState(false);
     const [ form, handleForm, setForm ] = useCustomForm();
     const navigate = useNavigate()
 
@@ -46,11 +47,19 @@ export default function CartPage() {
 
     }, [refresh])
 
+    useEffect(() => {
+
+        const test = products?.length > 0 ? (products[0].cart.length > 0) : false
+        setVerify(products?.length !== undefined && test)
+   
+    }, [products])
+
+
 
     
     return(
         <Container>
-            {products?.length !== undefined ? (
+            {(verify) ? (
                 <>
                     <Title>Carrinho</Title>
 
@@ -68,7 +77,7 @@ export default function CartPage() {
 
                     </RightContainer>
                 </>
-            ):(<EmptyCart onClick={ () => navigate("/products")}>Carrinho Vazio</EmptyCart>)}
+            ):(<EmptyCart onClick={ () => navigate("/products")}>Carrinho Vazio<div>(clique aqui para ir ao catálogo)</div></EmptyCart>)}
         </Container>   
     )
 }
@@ -88,16 +97,21 @@ const EmptyCart = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 30vh;
-    font-size: 6vh;
+    font-size: 4rem;
     color: #747474;
     cursor: pointer;
+    div {
+        font-size: 1rem;
+        margin-top: 1.2vh;
+    }
 `
 const Title = styled.div`
     width: 85%;
     height: 8vh;
     color: white;
-    font-size: 4vh;
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: 0.3vw;
 

@@ -30,15 +30,16 @@ const SubTitle = styled.div`
     width: 100%;
     margin-top: 1vh;
     color: #ffcc00;
+    margin-bottom: 2.6vh;
     span{
-        font-size: 2vh;
+        font-size: 1.2rem;
     }
 `
 const Title = styled.div`
     width: 100%;
     margin-top: 8vh;
     span{
-        font-size: 4vh;
+        font-size: 3em;
     }
 `
 const Container = styled.div`
