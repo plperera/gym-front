@@ -55,12 +55,12 @@ const Container = styled.div`
 const Title = styled.div`
     height: 20%;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 30px;
     text-align: center;
     margin-top: 2vh;    
 `
 const SubTitle = styled.div`
-    font-size: 1.1rem;;
+    font-size: 15px;;
     height: 50%;
     color: #F0F0F0;
     text-align: center;

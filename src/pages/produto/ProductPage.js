@@ -6,6 +6,7 @@ import ProductEspecifcation from "../../components/product/ProductEspecifcation"
 import Carrosel from "./Carrosel"
 import api from "../../services/API"
 import { useParams } from "react-router-dom";
+import ImageCarrosel from "./ImageCarrosel";
 
 export default function ProductPage() {
 
@@ -28,7 +29,7 @@ export default function ProductPage() {
             <Container>
                 <ProductImageContainer>
                     {/* <img src={MaquinaPeito}/> */}
-                    <Carrosel images={product.imagensProduto}/>
+                    <ImageCarrosel images={product.imagensProduto}/>
                 </ProductImageContainer>
 
                 <ProductBuyInfoContainer>
@@ -63,11 +64,6 @@ const ProductImageContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
-        max-height: 50vh;
-        border-radius: 10px;
-        border: 5px solid #313131;
-    }
 `
 const ProductBuyInfoContainer = styled.div`
     width: 50%;

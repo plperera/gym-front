@@ -56,32 +56,32 @@ const Container = styled.div`
     padding: 3vh 0 0 1.8vw;
 `
 const InfoCategoria = styled.div`
-    font-size: 1.8rem;
+    font-size: 16px;
     font-weight: 700;
     color: #ffcc00;
     margin-bottom: 1.8vh;
 `
 const InfoNome = styled.div`
-    font-size: 1.8rem;
+    font-size: 25px;
     color: #F3F3F3;
     margin-bottom: 2.5vh;
 
 `
 const InfoRate = styled.div`
-    font-size: 1.8rem;
+    font-size: 18px;
     color: #F3F3F3;
     font-weight: 700;
     margin-bottom: 10vh;
 
     span {
         color: #ffcc00;
-        font-size: 1.9rem;       
+        font-size: 22px;       
         margin-right: 0.3vw;
     }
 `
 const Button = styled.div`
 
-    font-size: 1.8rem;
+    font-size: 18px;
     width: 20vw;
     height: 5vh;
     display: flex;
@@ -100,12 +100,12 @@ const Button = styled.div`
     }
 `
 const InfoEmpresa = styled.div`
-    font-size: 1.05rem;
+    font-size: 15px;
     color: #C9C9C9;
     margin-top: 2vh;
     span {
         color: #ffcc00;
-        font-size: 1.2rem;
-        margin-right: 0.3vw;
+        font-size: 18px;
+        margin-right: 0.4vw;
     }
 `

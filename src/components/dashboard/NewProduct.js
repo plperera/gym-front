@@ -57,7 +57,7 @@ export default function NewProduct (){
             comprimento: Number(form.comprimento).toFixed(2) * 100,
             peso: Number(form.peso).toFixed(2) * 100,
             categorias: arrayCategorias,
-            imagens: arrayImagens
+            imagens: arrayImagens.reverse()
         }
     }
     

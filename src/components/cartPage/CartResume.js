@@ -104,12 +104,12 @@ const InfoRow = styled.div`
     margin-bottom: 1.3vh;
     display: flex;
     justify-content: left;
-    font-size: 1rem;
+    font-size: 12px;
     border-bottom: 3px solid #3F3F3F;
-    height: 3vh;
+    height: 4vh;
 
     div:first-child{
-        width: 55%;
+        width: 60%;
         border-bottom: none;
         display: flex;
         align-items: center;
@@ -121,14 +121,14 @@ const InfoRow = styled.div`
         display: flex;
         align-items: center;
         justify-content: right;
-        width: 45%;
+        width: 40%;
         border-bottom: none;
 
     }
 `
 const Title = styled.h3`
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 22px;
     margin-bottom: 2vh;
     font-weight: 700;
 `;
@@ -146,7 +146,7 @@ const ButtonStyled = styled.div`
     height: 5vh;
     border-radius: 10px;
     background-color: #44B145;
-    font-size: 1.6rem;
+    font-size: 20px;
     font-weight: 700;
     color: white;
     cursor: pointer;
@@ -168,7 +168,7 @@ const InfoDetails = styled.div`
     text-align: center;
     margin-top: 1vh;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 12px;
     letter-spacing: .06vw;
     color: #F5F5F5;
     span {

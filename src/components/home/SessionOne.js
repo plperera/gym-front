@@ -39,9 +39,9 @@ export default function SessionOne (){
                     </Title>
 
                     <SubTitle>
-                        Dê adeus aos treinos monótonos e limitados. Com nossas <HighlightYellow>Máquinas de Alta Qualidade</HighlightYellow>, 
+                        Dê adeus aos treinos monótonos e limitados. Com nossas <HighlightYellow fontSize={"28px"}>Máquinas de Alta Qualidade</HighlightYellow>, 
                         você terá acesso a uma variedade de exercícios que trabalham todos os grupos musculares, 
-                        <HighlightYellow> garantindo</HighlightYellow> um treino <HighlightYellow>completo e eficiente</HighlightYellow>.
+                        <HighlightYellow fontSize={"28px"}> garantindo</HighlightYellow> um treino <HighlightYellow fontSize={"28px"}>completo e eficiente</HighlightYellow>.
                     </SubTitle>   
 
                     <div>
@@ -74,25 +74,26 @@ const moveDownAndChangeColor = keyframes`
 `;
 const ReactIconContainer = styled.div`
     color: white;
-    font-size: 4rem;
+    font-size: 50px;
     animation: ${moveDownAndChangeColor} 1s ease-in-out infinite;
     margin-top: 10vh;
     cursor: pointer;
 `
 const Title = styled.div`
     span{
-        font-size: 2.4rem;
+        font-size: 32px;
     }
 `
 const SubTitle = styled.div`
     
     margin-top: 7vh;
-    font-size: 2.2rem;
+    font-size: 30px;
     
 `
 const HighlightYellow = styled.span`
     color: #ffcc00;
     font-weight: bold;
+    font-size: ${ props => props.fontSize || "inherit"};
 `
 const UpContainer = styled.div`
     width: 100%;
@@ -126,7 +127,7 @@ const Button = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 22px;
 
     :hover{
         background-color: #ffcc00;

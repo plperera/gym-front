@@ -66,7 +66,7 @@ const Container = styled.div`
     flex-direction: column;
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 24px;
         font-weight: 700;
         letter-spacing: 0.2vw;
     }
@@ -87,7 +87,7 @@ const InputStyle = styled.input`
     opacity: 1;
     border: none;
     border-bottom: 0.4vh #ababab solid;
-    font-size: 0.95rem;
+    font-size: 15px;
     color: #FFFFFF;
 
     padding-left: 1.6em;

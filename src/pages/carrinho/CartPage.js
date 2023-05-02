@@ -99,11 +99,11 @@ const EmptyCart = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 30vh;
-    font-size: 4rem;
+    font-size: 70px;
     color: #747474;
     cursor: pointer;
     div {
-        font-size: 1rem;
+        font-size: 18px;
         margin-top: 1.2vh;
     }
 `
@@ -111,7 +111,7 @@ const Title = styled.div`
     width: 85%;
     height: 8vh;
     color: white;
-    font-size: 2.8rem;
+    font-size: 35px;
     font-weight: 700;
     letter-spacing: 0.3vw;
 

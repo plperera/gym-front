@@ -109,7 +109,7 @@ export default function SessionThree (){
 const ContainerButton = styled.div`
     width: 91.5%;
     height: 50px;
-    font-size: 1.4rem;
+    font-size: 24px;
     
     display: flex;
     align-items: center;
@@ -136,7 +136,7 @@ const ContainerButton = styled.div`
 const HighlightYellow = styled.span`
     color: #ffcc00;
     font-weight: bold;
-    font-size: 2.4rem !important;
+    font-size: 38px !important;
 
 `
 const ContainerOption = styled.div`
@@ -188,7 +188,7 @@ const OptionsProducts = styled.div`
 const Title = styled.div`
     width: 100%;
     span{
-        font-size: 2.4rem;
+        font-size: 36px;
     }
 `
 const Container = styled.div`

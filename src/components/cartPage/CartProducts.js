@@ -98,22 +98,23 @@ const RightSideProduct = styled.div`
     flex-direction: column;
 `
 const ProductTitle = styled.div`
-    font-size: 1.4rem;
+    font-size: 19px;
     font-weight: 700;
     margin-top: 1vh;
 `
 const ProductAmountManager = styled.div`
     height: 10vh;
-    width: 40vw;
+    width: 30vw;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 `
 const ProductDelete = styled.div`
     height: 2.5vh;
-    width: 7vw;
-    font-size: 0.85rem;
+    width: 9vw;
+    font-size: 11px;
+    font-weight: 700;
     color: #B30B0B;
     display: flex;
     align-items: center;
@@ -141,7 +142,7 @@ const ProductAmout = styled.div`
         justify-content: center;
         border-radius: 50px;
         font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 18px;
         margin-right: .6vw;
         cursor: pointer;
         user-select: none;

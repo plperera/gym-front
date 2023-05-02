@@ -55,7 +55,7 @@ const Container = styled.div`
 
         h4 {
             color: #ffcc00;
-            font-size: 1.15rem;
+            font-size: 13.5px;
         }
     }
 
@@ -74,7 +74,7 @@ const Container = styled.div`
 const Title = styled.div`
     height: 15%;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 15px;
     justify-content: start !important;
     font-weight: 700;
     text-align: center;
@@ -82,7 +82,7 @@ const Title = styled.div`
     color: #171717;
 `
 const SubTitle = styled.div`
-    font-size: 0.9rem;
+    font-size: 13px;
     height: 22%;
     width: 95%;
     color: #3B3B3B;
@@ -91,7 +91,7 @@ const SubTitle = styled.div`
 
 `
 const Button = styled.h4`
-    font-size: 1.1rem;
+    font-size: 13px;
     font-weight: 700;
     width: 100%;
     height: 8%;

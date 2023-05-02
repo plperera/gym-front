@@ -58,7 +58,7 @@ const OptionsContainer = styled.div`
 `
 const Title = styled.div`
     span{
-        font-size: 2.4rem;
+        font-size: 28px;
     }
 `
 const ButtonContainer = styled.div`
@@ -77,7 +77,7 @@ const ButtonContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.6rem;
+        font-size: 25px;
 
         :hover{
             background-color: #ffcc00;

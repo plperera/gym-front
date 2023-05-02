@@ -45,14 +45,14 @@ const OptionsContainer = styled.div`
     background-color: #1B1B1B;  
 `
 const ProductOption = styled.div`
-    width: 7vw;
+    width: 8vw;
     height: 5vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 15px;
     user-select: none;
 
     color: ${props => props.color};
@@ -71,5 +71,6 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 2rem;
+    font-size: 32px;
+    margin-bottom: 2vh;
 `
