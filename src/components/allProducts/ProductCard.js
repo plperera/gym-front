@@ -72,6 +72,10 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
     }
+    @media (max-width: 768px) {
+        width: 40vw;
+        height: 32vh;
+    }
 `
 const Title = styled.div`
     height: 15%;
@@ -82,6 +86,9 @@ const Title = styled.div`
     text-align: center;
     margin-top: 2vh;    
     color: #171717;
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `
 const SubTitle = styled.div`
     font-size: 12px;
@@ -90,6 +97,9 @@ const SubTitle = styled.div`
     color: #3B3B3B;
     text-align: center;
     justify-content: start !important;
+    @media (max-width: 768px) {
+        font-size: 10.5px;
+    }
 
 `
 const Button = styled.h4`
@@ -98,4 +108,7 @@ const Button = styled.h4`
     width: 100%;
     height: 8%;
     color: #171717;
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `

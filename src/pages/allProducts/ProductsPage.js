@@ -70,15 +70,16 @@ const Container = styled.div`
     min-height: 100vh;
     background-color: #0A0A0A;
     color: white;
-    margin-top: 7vh;
+    margin-top: 7.5vh;
     padding-top: 3.5vh;
-    padding-left: 7vw;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
 
     display: flex;
     flex-direction: column;
 `
 const CategoryMenuContainer = styled.div`
-    width: 85%;
+    width: 100%;
     height: 15vh;
 `
 const ContentContainer = styled.div`

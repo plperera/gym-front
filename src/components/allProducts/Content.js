@@ -20,7 +20,7 @@ export default function Content({filterProducts}) {
     )
 }
 const OptionsProducts = styled.div`
-    width: 85%;
+    width: 100%;
     height: 100%;
     margin-top: 5vh;
     border-radius: 10px;
@@ -29,5 +29,7 @@ const OptionsProducts = styled.div`
     align-items: center;   
     justify-content: center;
     flex-wrap: wrap;
-    
+    @media (max-width: 768px) {
+        justify-content: space-between;
+    }
 `
