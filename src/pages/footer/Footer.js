@@ -50,7 +50,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-
 `
 const InfoContainer = styled.div`
     width: 85%;
@@ -61,6 +60,11 @@ const InfoContainer = styled.div`
     justify-content: space-between;
     img {
         height: 7vh;
+    }
+    @media (max-width: 768px) {
+        img {
+            height: 5vh;
+        }
     }
 
 `
@@ -79,7 +83,11 @@ const SubInfoContainer = styled.div`
         align-items: center;
         justify-content: space-between;
     }
-
+    @media (max-width: 768px) {
+        height: 6vh;
+        font-size: 0.8rem;
+        text-align: center;
+    }
 `
 const ReactIconContainer = styled.div`
     font-size: 2rem;
@@ -89,6 +97,13 @@ const ReactIconContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 30%;
+    @media (max-width: 768px) {
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+        width: 25%;
+        justify-content: space-between;
+        gap: 1vh;
+    }
 `
 const LocalDetails = styled.div`
     width: 40%;
@@ -98,6 +113,9 @@ const LocalDetails = styled.div`
     align-items: center;
     justify-content: right;
     text-align: center;
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
 `
 const SubTitle = styled.div`
     display: flex;

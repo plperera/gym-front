@@ -34,12 +34,22 @@ const SubTitle = styled.div`
     span{
         font-size: 1.2rem;
     }
+    @media (max-width: 768px) {
+        margin-top: 2vh;
+        margin-bottom: 4vh;
+        span {
+            font-size: 16px;
+        }
+    }
 `
 const Title = styled.div`
     width: 100%;
     margin-top: 8vh;
     span{
         font-size: 3em;
+    }
+    @media (max-width: 768px) {
+        margin-top: 0vh;
     }
 `
 const Container = styled.div`

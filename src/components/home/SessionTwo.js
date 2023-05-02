@@ -50,10 +50,13 @@ export default function SessionTwo (){
 
 const OptionsContainer = styled.div`
     width: 95%;
-    height:50vh;
+    min-height:50vh;
     margin-top: 6vh;
     display: flex;
     align-items: center;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
     
 `
 const Title = styled.div`
@@ -86,10 +89,14 @@ const ButtonContainer = styled.div`
             animation: none;
         }
     }
+    @media (max-width: 768px) {
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+    } 
 `
 const Container = styled.div`
     width: 100%;
-    height: 85vh;
+    min-height: 85vh;
     background-image: url(${props => props.background});
     background-color: #020202;
     background-repeat: no-repeat;

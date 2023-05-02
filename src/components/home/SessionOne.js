@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components"
 import primeiraImagem from "../../assets/images/sule-makaroglu-YFmvjO3TP_s-unsplash.jpg"
+import backgroundImageMobile from "../../assets/images/background-mobile.jpg"
 import Background from "./Background"
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
@@ -42,11 +43,13 @@ export default function SessionOne (){
                         Dê adeus aos treinos monótonos e limitados. Com nossas <HighlightYellow fontSize={"28px"}>Máquinas de Alta Qualidade</HighlightYellow>, 
                         você terá acesso a uma variedade de exercícios que trabalham todos os grupos musculares, 
                         <HighlightYellow fontSize={"28px"}> garantindo</HighlightYellow> um treino <HighlightYellow fontSize={"28px"}>completo e eficiente</HighlightYellow>.
-                    </SubTitle>   
+                    </SubTitle>  
 
                     <div>
                         <Button onClick={() => changeScreen("products")}>{"Quero ver o Catálogo"}</Button>   
-                    </div>   
+                    </div> 
+
+                    <DeliveryStatus><span>✓</span>Entregamos para todo o Brasil</DeliveryStatus> 
 
                     <ReactIconContainer onClick={handleScroll}>
                         <BsChevronDoubleDown/>
@@ -56,7 +59,7 @@ export default function SessionOne (){
                 
             </UpContainer>
         
-            <Background backgroundImage={primeiraImagem}/>
+            <Background backgroundImage={primeiraImagem} backgroundImageMobile={backgroundImageMobile}/>
         </>
     )
 }
@@ -83,11 +86,21 @@ const Title = styled.div`
     span{
         font-size: 32px;
     }
+
+    @media (max-width: 768px) {
+        span{
+            font-size: 26px;
+        }     
+    }
 `
 const SubTitle = styled.div`
     
     margin-top: 7vh;
     font-size: 30px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
     
 `
 const HighlightYellow = styled.span`
@@ -108,11 +121,40 @@ const UpContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media ( max-width: 768px){
+        padding-top: 0vh;
+        height: 90vh;
+        align-items: center;
+    }
+
 `
 const TextContainer = styled.div`
     margin-left: -24vw;
     margin-top: 5vh;
     width: 60%;
+
+    @media ( max-width: 768px){
+        width: 100%;
+        padding: 0 4vw 0 4vw;
+        margin: 0;
+    }
+`
+const DeliveryStatus = styled.div`
+    width: 50%;
+    font-size: 18px;
+    margin-top: 5vh;
+    span {
+        margin-right: 2vw;
+        color: #00FF2F;
+        font-size: 20px;
+    }
+    @media ( max-width: 768px){
+        width: 60vw;
+        text-align: center;
+        border-left: 2px solid #2C2C2C;
+        background-color: #3131314B;
+        padding: 1vh 2vw;
+    }
 `
 const Button = styled.div`
     width:20vw;
@@ -134,6 +176,12 @@ const Button = styled.div`
         color: #171717;
         font-weight: bold;
         animation: none;
+    }
+
+    @media ( max-width: 768px){
+        width: 60vw;
+        height: 70px;
+        text-align: center;
     }
     
 `
