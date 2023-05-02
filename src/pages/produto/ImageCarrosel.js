@@ -7,13 +7,6 @@ export default function ImageCarrosel ({ images }) {
     const [current, setCurrent] = useState(0);
     const length = images.length;
   
-    const nextSlide = () => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    };
-  
-    const prevSlide = () => {
-      setCurrent(current === 0 ? length - 1 : current - 1);
-    };
     function ChangeSlide(action){
       if(action === 'next'){
         setCurrent( current === length - 1 ? 0 : current + 1 )
@@ -24,17 +17,6 @@ export default function ImageCarrosel ({ images }) {
   
     return (
       <>
-        {/* <CarouselContainer>
-            <CarouselButton onClick={prevSlide}>&#10094;</CarouselButton>
-                {images.map((image, index) => (
-                    <CarouselSlide key={index} isActive={index === current}>
-                    {index === current && <CarouselImage src={`https://drive.google.com/uc?export=view&id=${image.imageRef}`} alt="carousel" />}
-                    </CarouselSlide>
-                ))}
-            <CarouselButton onClick={nextSlide}>&#10095;</CarouselButton>
-        </CarouselContainer> */}
-
-        
         <Container>
           <CarouselContainer>
             <ButtonStyle onClick={() => ChangeSlide('prev')}>&#10094;</ButtonStyle>
@@ -53,6 +35,11 @@ const Container = styled.div`
   width: 42.5vw;
   height: 50vh;
   padding: 3vh 0 0 1.8vw;
+  @media (max-width: 768px) {
+    width: 85vw;
+    height: 40vh;
+    padding: 0;
+  }
 `
 const CarouselContainer = styled.div`
   display: flex;
@@ -68,6 +55,9 @@ const ImageContainer = styled.div`
   justify-content: center;
   border-radius: 5px;
   background-color: #F0F0F0;
+  @media (max-width: 768px) {
+    width: 68vw;
+  }
 `
 const ImageStyle = styled.img`
   max-height: 100%;
@@ -85,4 +75,7 @@ const ButtonStyle = styled.div`
   color: white;
   cursor: pointer;
   color: #F0F0F0;
+  @media (max-width: 768px) {
+    width: 8.5vw;
+  }
 `

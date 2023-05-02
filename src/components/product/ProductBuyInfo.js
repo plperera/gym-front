@@ -54,17 +54,26 @@ const Container = styled.div`
     flex-direction: column;
 
     padding: 3vh 0 0 1.8vw;
+    @media (max-width: 768px) {
+        padding: 0;
+    }
 `
 const InfoCategoria = styled.div`
     font-size: 16px;
     font-weight: 700;
     color: #ffcc00;
     margin-bottom: 1.8vh;
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 `
 const InfoNome = styled.div`
     font-size: 25px;
     color: #F3F3F3;
     margin-bottom: 2.5vh;
+    @media (max-width: 768px) {
+        font-size: 26px;
+    }
 
 `
 const InfoRate = styled.div`
@@ -72,15 +81,21 @@ const InfoRate = styled.div`
     color: #F3F3F3;
     font-weight: 700;
     margin-bottom: 10vh;
-
     span {
         color: #ffcc00;
         font-size: 22px;       
         margin-right: 0.3vw;
     }
+    @media (max-width: 768px) {
+        font-size: 26px;
+        margin-bottom: 3vh;
+        span {
+            font-size: 29px;
+            margin-right: 1.3vw;
+        }
+    }
 `
 const Button = styled.div`
-
     font-size: 18px;
     width: 20vw;
     height: 5vh;
@@ -98,6 +113,12 @@ const Button = styled.div`
         color: #FFFFFF;
         transform: translateY(-0.7vh);
     }
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 7vh;
+        font-size: 20px;
+        margin-bottom: 1vh;
+    }
 `
 const InfoEmpresa = styled.div`
     font-size: 15px;
@@ -107,5 +128,13 @@ const InfoEmpresa = styled.div`
         color: #ffcc00;
         font-size: 18px;
         margin-right: 0.4vw;
+    }
+    @media (max-width: 768px) {
+        font-size: 17px;
+        span {
+            margin-right: 1.3vw;
+            font-size: 21px;
+        }
+        margin-bottom: 0.8vh;
     }
 `

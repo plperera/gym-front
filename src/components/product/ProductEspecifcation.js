@@ -38,6 +38,11 @@ const Container = styled.div`
 
     padding-top: 12vh;
     color: white;
+    @media (max-width: 768px) {
+        padding-top: 3.5vh;
+        margin-top: 2.5vh;
+        border-top: 4px solid #181818;
+    }
 `
 const SubContainer = styled.div`
     width: 25%;
@@ -57,6 +62,10 @@ const SubContainer = styled.div`
         font-weight: 700;
         color: #B8B8B8;
         margin-left: 0.5vw;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 5.5vh;
     }
 `
 const Title = styled.h1`
