@@ -46,6 +46,7 @@ export default function SessionOne (){
 
                     <div>
                         <Button onClick={() => changeScreen("products")}>{"Quero ver o Catálogo"}</Button>   
+                        <DeliveryContainer><HighlightYellow>✓</HighlightYellow>Entregamos para todo Brasil</DeliveryContainer>   
                     </div>   
 
                     <ReactIconContainer onClick={handleScroll}>
@@ -135,4 +136,15 @@ const Button = styled.div`
         animation: none;
     }
     
+`
+const DeliveryContainer = styled.div`
+    width:28vw;
+    height:60px;
+
+    margin-top: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1.4rem;
 `
