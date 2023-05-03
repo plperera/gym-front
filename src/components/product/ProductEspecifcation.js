@@ -38,11 +38,16 @@ const Container = styled.div`
 
     padding-top: 12vh;
     color: white;
+    @media (max-width: 768px) {
+        padding-top: 3.5vh;
+        margin-top: 2.5vh;
+        border-top: 4px solid #181818;
+    }
 `
 const SubContainer = styled.div`
     width: 25%;
     h2 {
-        font-size: 1.6rem;
+        font-size: 20px;
         color: #ffcc00;
         padding-bottom: 1vh;
         border-bottom: 4px solid #181818;
@@ -50,23 +55,27 @@ const SubContainer = styled.div`
     }
     div {
         margin-top: 3vh;
-        font-size: 1.2rem;
+        font-size: 16px;
     }
     span {
-        font-size: 1.1rem;
+        font-size: 16px;
         font-weight: 700;
         color: #B8B8B8;
         margin-left: 0.5vw;
     }
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 5.5vh;
+    }
 `
 const Title = styled.h1`
     width: 100%;
-    font-size: 2.6rem;
+    font-size: 30px;
     margin-bottom: 6vh;
 `
 const IconePeso = styled(FaWeightHanging)`
     color: #ffcc00;
-    font-size: 1.1rem;
+    font-size: 16px;
 `;
 const SpanCaracterEspecial = styled.span`
     color: #ffcc00 !important;

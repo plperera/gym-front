@@ -18,7 +18,7 @@ export default function Categorias({imagem, titulo, subtitulo, changeScreen}){
 
 const Container = styled.div`  
 
-    height: 80%;
+    height: 40vh;
     width: 15vw;
     border-radius: 5px;
     
@@ -43,7 +43,7 @@ const Container = styled.div`
 
     img {
         color: #ffcc00;
-        height: 30%;
+        height: 13vh;
     }
     div {
         display: flex;
@@ -51,20 +51,33 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
     }
+    @media (max-width: 768px) {
+        width:40vw;
+        height: 35vh;
+        img {
+            height: 85px;
+        }
+    }
 `
 const Title = styled.div`
     height: 20%;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 30px;
     text-align: center;
-    margin-top: 2vh;    
+    margin-top: 2vh;   
+    @media (max-width: 768px) {
+        font-size: 24px;
+    } 
 `
 const SubTitle = styled.div`
-    font-size: 1.1rem;;
+    font-size: 15px;
     height: 50%;
     color: #F0F0F0;
     text-align: center;
     justify-content: start !important;
     margin-top: 2vh;
+    @media (max-width: 768px) {
+        font-size: 12px;
+    } 
 
 `

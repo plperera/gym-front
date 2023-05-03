@@ -19,63 +19,79 @@ export default function Menu (){
     }
 
     return(
-        <Container>
+        <OutContainer>
+            <Container>
 
-            <LogoContainer>
-                <Image src={LogoUpFitness} onClick={ () => changeScreen("") }/>
-            </LogoContainer>
+                <LogoContainer>
+                    <Image src={LogoUpFitness} onClick={ () => changeScreen("") }/>
+                </LogoContainer>
+                
+                <OptionsContainer>
+                    <div>Quem Somos </div>
+                    <div onClick={ () => changeScreen("products") }>Catálogo</div>
+                    <div>Contato</div>
+                </OptionsContainer>
+
+                <CardContainer onClick={ () => changeScreen("cart") }>
+                    <CartIcon/>
+                    <span>Ver Carrinho</span>
+                </CardContainer>
             
-            <OptionsContainer>
-                <div>Quem Somos </div>
-                <div onClick={ () => changeScreen("products") }>Catálogo</div>
-                <div>Contato</div>
-            </OptionsContainer>
-
-            <CardContainer onClick={ () => changeScreen("cart") }>
-                <CartIcon/>
-                <span>Ver Carrinho</span>
-            </CardContainer>
-        
-        </Container>
+            </Container>
+        </OutContainer>
     )
 }
-const Container = styled.div`
+const OutContainer = styled.div`
     width: 100%;
     height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #020202;
     position: fixed;
     z-index: 100;
-    background-color: #020202;
+    top: 0;
+    @media (max-width: 850px) {
+        height: 8vh;
+    }
+`
+const Container = styled.div`
+    width: 85%;
+    height: 7vh;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row;
-
-    top: 0;
 `
 const Image = styled.img`
-  width: 6vh;
-  margin-left: 8vw;
+  width: 7vh;
   cursor: pointer;
-`;
+`
 const LogoContainer = styled.div`
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 `
 const OptionsContainer = styled.div`
-    font-size: 1.1rem;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 
     display: flex; 
     align-items: center;
-    justify-content: center;
-    margin-left: 8vw;
+    justify-content: space-between;
     
     div {
-        margin-right: 6vw;
+        width: 10vw;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+    }
+    @media (max-width: 850px) {
+        display: none;
     }
 `
 const CardContainer = styled.div`
@@ -85,7 +101,6 @@ const CardContainer = styled.div`
     align-items: center;
     justify-content: center;
     
-    margin-left: 23vw;
     width: 10vw;
     height: 4.3vh;
 
@@ -100,12 +115,21 @@ const CardContainer = styled.div`
     }
     span {
         text-align: center;
-        font-size: 1rem;
+        font-size: 12px;
         margin-left: .6vw;
+    }
+    @media (max-width: 768px) {
+        width: 20vw;
+        height: 5vh;
+        span{
+            display: none;
+        }
     }
 `
 const CartIcon = styled(RiShoppingCartFill)`
-    font-size: 1.8rem;
+    font-size: 20px;
     transition: all ease 0s !important;
-    
+    @media (max-width: 768px) {
+        font-size: 27px;
+    }
 `

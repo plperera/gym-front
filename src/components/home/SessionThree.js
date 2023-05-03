@@ -30,8 +30,9 @@ export default function SessionThree (){
         const response = await api.GetAllProducts()
         const secondResponse = await api.GetAllCategories()
         setCategories(secondResponse.data)
-        setProducts(response.data)
-        setFilterProducts(response.data)
+        const fake = [...response.data, ...response.data, ...response.data]
+        setProducts([...fake,...fake])
+        setFilterProducts([...fake,...fake])
     }
 
     useEffect(() => {
@@ -109,7 +110,7 @@ export default function SessionThree (){
 const ContainerButton = styled.div`
     width: 91.5%;
     height: 50px;
-    font-size: 1.4rem;
+    font-size: 24px;
     
     display: flex;
     align-items: center;
@@ -132,15 +133,17 @@ const ContainerButton = styled.div`
             animation: none;
         }
     }
+    @media (max-width: 768px) {
+        margin-bottom: 7vh;        
+    }
 `
 const HighlightYellow = styled.span`
     color: #ffcc00;
     font-weight: bold;
-    font-size: 2.4rem !important;
+    font-size: 38px !important;
 
 `
 const ContainerOption = styled.div`
-
     width: 60%;
     height: 10vh;
     border-radius: 5px;
@@ -151,7 +154,13 @@ const ContainerOption = styled.div`
     display: flex;
     align-items: center;   
     justify-content: center;
-    background-color: #1B1B1B;   
+    background-color: #1B1B1B;  
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 16vh;
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+    } 
 `
 const ProductOption = styled.div`
     width: 8vw;
@@ -172,28 +181,47 @@ const ProductOption = styled.div`
     margin-right: 3vw;
 
     cursor: pointer;
+    @media (max-width: 768px) {
+        width: 22vw;
+        font-size: 12px;
+    }
 `
 const OptionsProducts = styled.div`
 
     width: 85%;
-    height: 50vh;
+    min-height: 50vh;
     margin-top: 5vh;
     border-radius: 10px;
 
     display: flex;
     align-items: center;   
     justify-content: center;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-wrap:wrap;
+        justify-content: space-between;
+    } 
     
 `
 const Title = styled.div`
     width: 100%;
     span{
-        font-size: 2.4rem;
+        font-size: 36px;
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 3vw;
+        span {
+            font-size: 29px !important;
+        }
     }
 `
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image:url(${props => props.background});
     background-repeat: no-repeat;
     background-size: cover;
@@ -204,5 +232,8 @@ const Container = styled.div`
     align-items: center;   
     flex-direction: column;
     padding: 10vh 0 0 8vw;
+    @media (max-width: 768px) {
+        padding-right: 8vw;
+    }
 
 `
