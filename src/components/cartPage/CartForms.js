@@ -76,10 +76,20 @@ const Container = styled.div`
     h3 {
         margin-top: 1.5vh;
     }
+    @media (max-width: 768px) {
+        padding-top: 6vh;
+        h2 {
+            font-size: 21px;
+            margin-bottom: 2vh;
+        }
+        h3 {
+            margin-top: 2.2vh;
+            font-size: 14px;
+        }
+    }
 
 `
 const InputStyle = styled.input`
-    
     margin-top: 1vh;
     height: 4vh;
     width: 100%;
@@ -102,6 +112,10 @@ const InputStyle = styled.input`
     }
     :focus {
         border-bottom: 0.4vh #ffcc00 solid;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 11px;
     }
     
 `

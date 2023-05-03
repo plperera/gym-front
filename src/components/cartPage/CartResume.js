@@ -99,6 +99,10 @@ const CartResumeContainer = styled.div`
     border-radius: 5px;
     padding: 1.5vh 2vw 0 2vw;
 
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
 `
 const InfoRow = styled.div`
     margin-bottom: 1.3vh;
@@ -124,6 +128,12 @@ const InfoRow = styled.div`
         width: 40%;
         border-bottom: none;
 
+    }
+    @media (max-width: 768px) {
+        div:last-child {
+        font-size: 14px;
+        text-align: center;
+        }
     }
 `
 const Title = styled.h3`
@@ -158,6 +168,9 @@ const ButtonStyled = styled.div`
         background-color: #50D152;
         transform: translateY(-0.4vh)
     }
+    @media (max-width: 768px) {
+        height: 7vh;
+    }
 `
 const InfoDetails = styled.div`
     width: 100%;
@@ -173,6 +186,9 @@ const InfoDetails = styled.div`
     color: #F5F5F5;
     span {
         margin-top: 3vh;
+    }
+    @media (max-width: 768px) {
+        margin-top: 2.5vh;
     }
 `
 const HighlightYellow = styled.span`

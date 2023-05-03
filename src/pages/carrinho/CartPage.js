@@ -92,6 +92,10 @@ const Container = styled.div`
     justify-content:center;
     align-items: flex-start;
     flex-wrap: wrap;
+    @media (max-width: 768px) {
+        padding-left: 7.5vw;
+        padding-right: 7.5vw;
+    }
 `
 const EmptyCart = styled.div`
     display: flex;
@@ -106,6 +110,11 @@ const EmptyCart = styled.div`
         font-size: 18px;
         margin-top: 1.2vh;
     }
+    @media (max-width: 768px) {
+        font-size: 60px;
+        text-align: center;
+        margin-top: 3vh;
+    }
 `
 const Title = styled.div`
     width: 85%;
@@ -118,15 +127,27 @@ const Title = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: left;
+    @media (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+    }
 `
 const LeftContainer = styled.div`
     width: 45%;
     min-height: 85vh;
     height: 100%;
+    @media (max-width: 768px) {
+        width: 100%;
+        min-height: 40vh;
+    }
 
 `
 const RightContainer = styled.div`
     width: 40%;
     min-height: 85vh;
     height: 100%;
+    @media (max-width: 768px) {
+        width: 100%;
+        min-height: 60vh;
+    }
 `
