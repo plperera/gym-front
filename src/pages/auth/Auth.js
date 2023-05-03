@@ -51,14 +51,14 @@ export default function Login (){
 }
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding-top: 7vh;
     
     background-color: #0F0F0F;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
 `
 const LoginContainer = styled.div`
@@ -66,7 +66,8 @@ const LoginContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 75%;
+    margin-top: 4vh;
+    min-height: 69vh;
     width: 30vw;
     background-color: #171717;
     border-radius: 5px;

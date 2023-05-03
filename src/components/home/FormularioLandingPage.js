@@ -3,62 +3,100 @@ import styled from "styled-components"
 export default function FormularioLandingPage(){
 
     return (
-
+        
         <Container>
-            <LeftSide>
-                <ContainerInput>
-                    <h4>Nome</h4>
-                    <input/>
-                </ContainerInput>
+            <SubContainer>
+                <LeftSide>
+                    <ContainerInput>
+                        <h4>Nome</h4>
+                        <input/>
+                    </ContainerInput>
 
-                <ContainerInput>
-                    <h4>Email</h4>
-                    <input/>
-                </ContainerInput>
+                    <ContainerInput>
+                        <h4>Email</h4>
+                        <input/>
+                    </ContainerInput>
 
-                <ContainerInput>
-                    <h4>Telefone/Celular</h4>
-                    <input/>
-                </ContainerInput>
+                    <ContainerInput>
+                        <h4>Telefone/Celular</h4>
+                        <input/>
+                    </ContainerInput>
 
-                <ContainerInput>
-                    <h4>Estado</h4>
-                    <input/>
-                </ContainerInput>
+                    <ContainerInput>
+                        <h4>Estado</h4>
+                        <input/>
+                    </ContainerInput>
 
-                <ContainerInput>
-                    <h4>Cidade</h4>
-                    <input/>
-                </ContainerInput>
+                    <ContainerInput>
+                        <h4>Cidade</h4>
+                        <input/>
+                    </ContainerInput>
 
-            </LeftSide>
+                </LeftSide>
 
-            <RightSide>
-                <ContainerInput>
-                    <h4>Assunto</h4>
-                    <input/>
-                </ContainerInput>
-                
-                <ContainerMensagem>
-                    <h4>Mensagem</h4>
-                    <textarea/>
-                </ContainerMensagem>                
-            </RightSide>
+                <RightSide>
+                    <ContainerInput>
+                        <h4>Assunto</h4>
+                        <input/>
+                    </ContainerInput>
+                    
+                    <ContainerMensagem>
+                        <h4>Mensagem</h4>
+                        <textarea/>
+                    </ContainerMensagem>                
+                </RightSide>
+            </SubContainer>
+            <ButtonStyle>Enviar</ButtonStyle>
         </Container>
 
     )
 }
 const Container = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    min-height: 30vw;
+`
+const SubContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    
+`
+const ButtonStyle = styled.div`
+    width: 85vw;
+    height: 8vh;
+    background-color: red;
+    margin-top: 2vh;        
+    border-radius: 10px;
+    background-color: #020202;
+    border: 3px solid #ffcc00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :hover{
+        background-color: #ffcc00;
+        color: #171717;
+        font-weight: bold;
+        animation: none;
+    }
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
 `
 const LeftSide = styled.div`
     width: 40%;
+    @media (max-width: 768px) {
+        width: 85vw;
+    }
 `
 const RightSide = styled.div`
     width: 60%;
+    @media (max-width: 768px) {
+        width: 85vw;
+    }
 `
 const ContainerInput = styled.div`
     height:10%;
@@ -87,6 +125,18 @@ const ContainerInput = styled.div`
         }
         :focus {
             border-bottom: 0.4vh #ffcc00 solid;
+        }
+    }
+    @media (max-width: 768px) {
+        height: 5.5vh;
+        margin-bottom: 2vh;
+        input {
+            border-color: #393939;
+            width: 100%;
+        }
+        h4 {
+            height: 1.2vh;
+            color: #B7B7B7;
         }
     }
 `
@@ -119,6 +169,18 @@ const ContainerMensagem = styled.div`
         }
         :focus {
             border-bottom: 0.4vh #ffcc00 solid;
+        }
+    }
+    @media (max-width: 768px) {
+        margin-top: 1vh;
+        textarea {
+            border-color: #393939;
+            height: 14vh;
+            width: 100%;
+        }
+        h4 {
+            height: 1.2vh;
+            color: #B7B7B7;
         }
     }
 `

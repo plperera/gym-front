@@ -92,6 +92,10 @@ const Container = styled.div`
     justify-content:center;
     align-items: flex-start;
     flex-wrap: wrap;
+    @media (max-width: 768px) {
+        padding-left: 7.5vw;
+        padding-right: 7.5vw;
+    }
 `
 const EmptyCart = styled.div`
     display: flex;
@@ -99,34 +103,51 @@ const EmptyCart = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 30vh;
-    font-size: 4rem;
+    font-size: 70px;
     color: #747474;
     cursor: pointer;
     div {
-        font-size: 1rem;
+        font-size: 18px;
         margin-top: 1.2vh;
+    }
+    @media (max-width: 768px) {
+        font-size: 60px;
+        text-align: center;
+        margin-top: 3vh;
     }
 `
 const Title = styled.div`
     width: 85%;
     height: 8vh;
     color: white;
-    font-size: 2.8rem;
+    font-size: 35px;
     font-weight: 700;
     letter-spacing: 0.3vw;
 
     display: flex;
     align-items: flex-end;
     justify-content: left;
+    @media (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+    }
 `
 const LeftContainer = styled.div`
     width: 45%;
     min-height: 85vh;
     height: 100%;
+    @media (max-width: 768px) {
+        width: 100%;
+        min-height: 40vh;
+    }
 
 `
 const RightContainer = styled.div`
     width: 40%;
     min-height: 85vh;
     height: 100%;
+    @media (max-width: 768px) {
+        width: 100%;
+        min-height: 60vh;
+    }
 `

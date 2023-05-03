@@ -34,25 +34,30 @@ export default function Filter({hasSelect, categories, selectOption}) {
 }
 const OptionsContainer = styled.div`
     width: 100%;
-    height: 50%;
+    min-height: 50%;
     border-radius: 5px;
 
     padding-left:3vw;
+    padding-right:3vw;
 
     display: flex;
     align-items: center;   
     justify-content: left;
     background-color: #1B1B1B;  
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        padding-bottom: 1vh;
+    }
 `
 const ProductOption = styled.div`
-    width: 7vw;
+    width: 8vw;
     height: 5vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 15px;
     user-select: none;
 
     color: ${props => props.color};
@@ -64,6 +69,11 @@ const ProductOption = styled.div`
     margin-right: 4vw;
 
     cursor: pointer;
+
+    @media (max-width: 768px) {
+        width: 21vw;
+        font-size: 12px;
+    }
 `
 const Title = styled.div`
     height: 50%;
@@ -71,5 +81,10 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 2rem;
+    font-size: 32px;
+    margin-bottom: 2vh;
+    @media (max-width: 768px) {
+        font-size: 26px;
+        margin-bottom: 0vh;
+    }
 `

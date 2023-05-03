@@ -55,7 +55,7 @@ const Container = styled.div`
 
         h4 {
             color: #ffcc00;
-            font-size: 1.15rem;
+            font-size: 13.5px;
         }
     }
 
@@ -70,30 +70,48 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
     }
+
+    @media (max-width: 768px) {
+        width: 25vw;
+        height: 25vh;
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+        margin-bottom: 4vh;
+    } 
 `
 const Title = styled.div`
     height: 15%;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 15px;
     justify-content: start !important;
     font-weight: 700;
     text-align: center;
     margin-top: 2vh;    
     color: #171717;
+    @media (max-width: 768px) {
+        font-size: 10.5px;
+    }
 `
 const SubTitle = styled.div`
-    font-size: 0.9rem;
+    font-size: 13px;
     height: 22%;
     width: 95%;
     color: #3B3B3B;
     text-align: center;
     justify-content: start !important;
+    @media (max-width: 768px) {
+        font-size: 9px;
+        width: 100%; 
+    }
 
 `
 const Button = styled.h4`
-    font-size: 1.1rem;
+    font-size: 13px;
     font-weight: 700;
     width: 100%;
     height: 8%;
     color: #171717;
+    @media (max-width: 768px) {
+        font-size: 9px;
+    }
 `
