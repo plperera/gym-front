@@ -32,7 +32,8 @@ export default function ThrendProduct({imagem, titulo, subtitulo, id}){
 
 const Container = styled.div`  
 
-    height: 80%;
+    min-height: 80%;
+    height: 35vh;
     width: 15vw;
     border-radius: 10px;
     

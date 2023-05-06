@@ -38,6 +38,7 @@ export default function ProductBuyInfo({category, title, rate, productId}) {
             <InfoNome>{title}</InfoNome>
             <InfoRate><span>★</span>{(rate/100).toFixed(1).replace(".",",")}</InfoRate>
             <Button onClick={() => AddToCart()}>Quero um orçamento</Button>
+            <InfoEmpresa><span>★</span>Entregamos para todo Brasil</InfoEmpresa>
             <InfoEmpresa><span>✔</span>Faça já seu orçamento totalmente de graça</InfoEmpresa>
             <InfoEmpresa><span>☏</span>Entraremos em contato o mais rápido possível</InfoEmpresa>
             

@@ -72,7 +72,7 @@ const ProductImageContainer = styled.div`
 `
 const ProductBuyInfoContainer = styled.div`
     width: 50%;
-    height: 50vh;
+    min-height: 50vh;
     background-color: none;
     @media (max-width: 768px) {
         width: 100%;
