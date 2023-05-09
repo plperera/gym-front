@@ -1,16 +1,95 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components"
-import api from "../../services/API";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export default function ProductEdit (){
+import api from "../../services/API"
+import { useParams } from "react-router-dom";
+import ImageEdit from "./ImageEdit";
+import ProductInfoEdit from "./ProductInfoEdit";
+import { useCustomForm } from "../../hooks/useCustomForms";
+import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
+
+export default function ProductPage() {
     const [ product, setProduct ] = useState(undefined);
+    const [ editMode, setEditMode ] = useState(false)
+    const [ form, handleForm, setForm ] = useCustomForm();
+    const [ imageAmount, setImageAmount ] = useState()
     const { productId } = useParams();
-
+    const token = useToken()
+    console.log(product)
     async function getProduct(){
         const response = await api.GetProductById(productId)
+        setStartValueForms(response.data)
         setProduct(response.data)
+    }
+    function setStartValueForms(productResponse){
+
+        let images = {}
+
+        productResponse?.imagensProduto.map((e, i) => {
+            images = ({ ...images, [`link${i}`]: `https://drive.google.com/file/d/${e.imageRef}/view?usp=share_link` } )
+        })
+        
+        const initialBody = {
+            name: productResponse.nome,
+            rate: productResponse.rate / 100, 
+            productId: productResponse.id, 
+            largura: productResponse.largura / 100, 
+            comprimento: productResponse.comprimento / 100, 
+            altura: productResponse.altura / 100, 
+            peso: productResponse.peso / 100, 
+        }
+
+        setForm({ ...form, ...initialBody, ...images })
+    }
+
+    async function SaveAndEdit (){
+        if ( editMode ) {
+            
+            const body = formatBody()
+            console.log("body:", body)
+    
+            try {   
+
+                const response = await api.PutProduct({token, body})
+                if( response.status === 200){
+                    toast.dark("Produto alterado com Sucesso !!")
+                }
+    
+            } catch (error) {
+                toast.error("Verifique os valores !!")
+                console.log(error)
+            } 
+
+        } else {
+            setEditMode(true)
+        }
+    }
+    function formatBody(){
+        const arrayImagens = []
+
+        imageAmount.forEach((e,i) => {
+            if(e?.imageCode !== undefined){
+                arrayImagens.push({nome: e.imageCode})
+            }
+            if(form[`imageCode${i}`] !== undefined){
+                arrayImagens.push({nome: form[`imageCode${e}`]})
+            }
+            
+        })
+
+        return {
+            id: product.id,
+            nome: form.name,
+            rate: Number(form.rate).toFixed(2) * 100,
+            descricao: product.descricao,
+            largura: Number(form.largura).toFixed(2) * 100,
+            altura: Number(form.altura).toFixed(2) * 100,
+            comprimento: Number(form.comprimento).toFixed(2) * 100,
+            peso: Number(form.peso).toFixed(2) * 100,
+            categorias: product.categoriasProduto,
+            imagens: arrayImagens.reverse()
+        }
     }
 
     useEffect(() => {
@@ -19,16 +98,39 @@ export default function ProductEdit (){
 
     }, [])
 
+    useEffect(() => {
+
+        console.log(form)
+
+    }, [form])
+
+
+
     return(
         product ? (
             <Container>
+                <ProductImageContainer>
+                    <ImageEdit images={product.imagensProduto} editMode={editMode} form={form} setForm={setForm} imageAmount={imageAmount} setImageAmount={setImageAmount}/>
+                </ProductImageContainer>
+
                 <ProductBuyInfoContainer>
-                    {/* <ProductBuyInfo category={product.categoriasProduto[0].categorias.tipo} title={product.nome} rate={product.rate} productId={product.id}/> */}
+                    <ProductInfoEdit 
+                        title={product.nome} 
+                        rate={product.rate} 
+                        productId={product.id} 
+                        largura={product.largura} 
+                        comprimento={product.comprimento} 
+                        altura={product.altura} 
+                        peso={product.peso} 
+                        arrayCategorias={product.categoriasProduto} 
+                        editMode={editMode}
+                        form={form}
+                        setForm={setForm}
+                        handleForm={handleForm}
+                    />
                 </ProductBuyInfoContainer>
 
-                <ProductEspecifcationContainer>
-                    {/* <ProductEspecifcation largura={product.largura} comprimento={product.comprimento} altura={product.altura} peso={product.peso} arrayCategorias={product.categoriasProduto}/> */}
-                </ProductEspecifcationContainer>
+                <ButtonStyle onClick={() => SaveAndEdit()}>{ editMode ? ("Salvar"):("Editar")}</ButtonStyle>
             </Container>      
         ):(<Container>Carregando...</Container>)
         
@@ -37,7 +139,7 @@ export default function ProductEdit (){
 const Container = styled.div`
     width: 100%;
     min-height: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
     background-color: #0A0A0A;
     color: white;
     margin-top: 7vh;
@@ -54,7 +156,7 @@ const Container = styled.div`
 `
 const ProductImageContainer = styled.div`
     width: 50%;
-    height: 50vh;
+    height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,14 +166,31 @@ const ProductImageContainer = styled.div`
 `
 const ProductBuyInfoContainer = styled.div`
     width: 50%;
-    min-height: 50vh;
+    min-height: 55vh;
     background-color: none;
     @media (max-width: 768px) {
         width: 100%;
         height: 40vh;
     }
 `
-const ProductEspecifcationContainer = styled.div`
-    width: 100%;
-    min-height: 50vh;
+const ButtonStyle = styled.div`
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    user-select: none;
+    
+    background-color: #020202;
+    border: 2px solid;
+    border-color: #ffcc00;
+    cursor: pointer;
+
+    :hover{
+        background-color: #ffcc00;
+        color: #171717;
+        font-weight: bold;
+        animation: none;
+    }
 `

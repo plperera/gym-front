@@ -19,13 +19,17 @@ function CreateCategoty({body, token}) {
 function CreateProduct({body, token}) {
   return axios.post(`${BASE_URL}/product`, body, {headers: { Authorization: `Bearer ${token}`}})
 }
+function PutProduct({body, token}) {
+  return axios.put(`${BASE_URL}/product`, body, {headers: { Authorization: `Bearer ${token}`}})
+}
 const api = {
   GetAllProducts,
   GetAllCategories,
   GetProductById,
   Login,
   CreateCategoty,
-  CreateProduct
+  CreateProduct,
+  PutProduct
 };
 
 export default api;

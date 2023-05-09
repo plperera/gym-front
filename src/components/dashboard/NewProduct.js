@@ -7,6 +7,7 @@ import api from "../../services/API";
 import { useEffect } from "react";
 import CategoriesSelector from "./CategoriesSelector";
 import useToken from "../../hooks/useToken";
+import ImageFormsEdit from "./ImageForms";
 
 export default function NewProduct (){
 
@@ -129,7 +130,7 @@ export default function NewProduct (){
                     <div>
                         <Title>Fotos</Title>
                         {
-                            imageAmount.map(e => <ImageForms setForm={setForm} form={form} index={e} key={e}/>)
+                            imageAmount.map(e => <ImageFormsEdit setForm={setForm} form={form} index={e} key={e}/>)
                         }
                         <ImageButtonStyle onClick={ () => AddMoreImages()}>+</ImageButtonStyle>
                     </div>
