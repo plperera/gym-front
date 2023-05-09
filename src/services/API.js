@@ -22,6 +22,12 @@ function CreateProduct({body, token}) {
 function PutProduct({body, token}) {
   return axios.put(`${BASE_URL}/product`, body, {headers: { Authorization: `Bearer ${token}`}})
 }
+function DeleteProduct({ body, token }) {
+  return axios.delete(`${BASE_URL}/product`, {
+    data: body,
+    headers: { Authorization: `Bearer ${token}` },
+  });
+}
 const api = {
   GetAllProducts,
   GetAllCategories,
@@ -29,7 +35,8 @@ const api = {
   Login,
   CreateCategoty,
   CreateProduct,
-  PutProduct
+  PutProduct,
+  DeleteProduct
 };
 
 export default api;
