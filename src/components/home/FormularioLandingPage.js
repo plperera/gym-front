@@ -46,7 +46,7 @@ export default function FormularioLandingPage(){
                     </ContainerMensagem>                
                 </RightSide>
             </SubContainer>
-            <ButtonStyle>Enviar</ButtonStyle>
+            <ButtonContainer><ButtonStyle>Enviar</ButtonStyle></ButtonContainer>
         </Container>
 
     )
@@ -63,9 +63,16 @@ const SubContainer = styled.div`
     width: 100%;
     height: 100%;
 `
-const ButtonStyle = styled.div`
-    width: 85vw;
+const ButtonContainer = styled.div`
+    width: 100%;
     height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const ButtonStyle = styled.div`
+    width: 35vw;
+    height: 100%;
     background-color: red;
     margin-top: 2vh;        
     border-radius: 10px;
@@ -84,6 +91,7 @@ const ButtonStyle = styled.div`
     }
     @media (max-width: 768px) {
         font-size: 22px;
+        width: 85vw;
     }
 `
 const LeftSide = styled.div`

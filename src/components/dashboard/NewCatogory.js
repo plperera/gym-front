@@ -1,11 +1,7 @@
 import { toast } from "react-toastify";
 import styled from "styled-components"
 import { useCustomForm } from "../../hooks/useCustomForms";
-import ImageForms from "./ImageForms";
-import { useState } from "react";
 import api from "../../services/API";
-import { useEffect } from "react";
-import CategoriesSelector from "./CategoriesSelector";
 import useToken from "../../hooks/useToken";
 
 export default function NewCategoty (){
@@ -58,11 +54,18 @@ const Container = styled.div`
     justify-content: start;
     flex-direction: column;
     color: #FFFFFF;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 const Title = styled.h3`
     font-size: 1.8rem;
     margin-bottom: 2vh;
     margin-top: 4.5vh;
+    @media (max-width: 768px) {
+        font-size: 20px;
+        margin-bottom: 4vh;
+    }
 `
 const InputStyle = styled.input`
     
@@ -89,6 +92,12 @@ const InputStyle = styled.input`
     :focus {
         border-bottom: 0.5vh #ffcc00 solid;
     }
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 6vh;
+        font-size: 20px;
+        margin-bottom: 2vh;
+    }
     
 `
 const ButtonStyle = styled.div`
@@ -112,6 +121,11 @@ const ButtonStyle = styled.div`
         font-weight: bold;
         animation: none;
     }
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 6vh;
+        font-size: 20px;
+    }
     
 `
 const SubContainer = styled.div`
@@ -119,4 +133,8 @@ const SubContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 `

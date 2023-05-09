@@ -22,6 +22,9 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 const SubContainer = styled.div`
     height: 100%;
@@ -41,6 +44,9 @@ const OptionIcon = styled.div`
     width: 20%;
     font-size:3.4rem;
     margin-right: 2vw;
+    @media (max-width: 768px) {
+        font-size: 30px;
+    }
 `
 const OptionTitle = styled.div`
     display: flex;
@@ -48,4 +54,7 @@ const OptionTitle = styled.div`
     justify-content: left;
     width: 80%;
     font-size: 1.9rem;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 `

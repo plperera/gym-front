@@ -36,10 +36,8 @@ export default function ProductsPage() {
         const secondResponse = await api.GetAllCategories()
         setCategories(secondResponse.data.slice(0, 7))
         
-        const fake = [...response.data, ...response.data, ...response.data, ...response.data, ...response.data, ...response.data]
-        setFilterProducts([...fake, ...fake, ...fake])
-        setProducts([...fake, ...fake, ...fake])
-        console.log(fake)
+        setFilterProducts(response.data)
+        setProducts(response.data)
     }
 
     useEffect(() => {

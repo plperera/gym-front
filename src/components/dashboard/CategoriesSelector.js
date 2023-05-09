@@ -31,4 +31,9 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @media (max-width: 768px) {
+        height: 6vh;
+        width: 48.5%;
+        font-size: 18px;
+    }
 `

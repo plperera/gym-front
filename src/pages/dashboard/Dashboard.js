@@ -27,7 +27,7 @@ export default function Dashboard (){
                         <DashboardOption Icon={<AiOutlineAppstoreAdd/>} Title={"Novo Produto"} setPageSelector={setPageSelector} ComponentRef={<NewProduct/>} />
                         <DashboardOption Icon={<MdCreateNewFolder/>} Title={"Nova Categoria"} setPageSelector={setPageSelector} ComponentRef={<NewCategoty/>} />
                         <DashboardOption Icon={<MdManageSearch/>} Title={"Gerenciar Produtos"} setPageSelector={setPageSelector} ComponentRef={<ManageProducts/>} />
-                        <DashboardOption Icon={<RiFolderSettingsFill/>} Title={"Gerenciar Categorias"} setPageSelector={setPageSelector} ComponentRef={undefined} />
+                        {/* <DashboardOption Icon={<RiFolderSettingsFill/>} Title={"Gerenciar Categorias"} setPageSelector={setPageSelector} ComponentRef={undefined} /> */}
                         <DashboardOption Icon={<TbTimeline/>} Title={"Em breve..."}/>
                     </OptionsContainer>
 
@@ -49,6 +49,9 @@ const Container = styled.div`
     align-items: left;
     justify-content: start;
     flex-direction: column;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
 `
 const Title = styled.div`
     font-size: 3rem;
@@ -58,6 +61,12 @@ const Title = styled.div`
         display: ${props => props.showArrow ? ("initial"):("none")};
         color: #5A5A5A;
         font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 25px;
+        span {
+            font-size: 12px;
+        }
     }
 `
 const OptionsContainer = styled.div`
@@ -70,4 +79,8 @@ const OptionsContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
+    @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+    }
 `

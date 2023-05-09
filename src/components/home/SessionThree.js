@@ -30,9 +30,8 @@ export default function SessionThree (){
         const response = await api.GetAllProducts()
         const secondResponse = await api.GetAllCategories()
         setCategories(secondResponse.data)
-        const fake = [...response.data, ...response.data, ...response.data]
-        setProducts([...fake,...fake])
-        setFilterProducts([...fake,...fake])
+        setProducts(response.data)
+        setFilterProducts(response.data)
     }
 
     useEffect(() => {

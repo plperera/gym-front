@@ -23,12 +23,17 @@ export default function ImageForms ({setForm, form, index}){
         <Container>
             <InputStyle placeholder={`Link da Imagem (${index})`} value={form[`link${index}`]} onChange={extractImageCode}/>
             <ImageRefContainer isValid={!!form[`imageCode${index}`]} >{form[`imageCode${index}`]}</ImageRefContainer>
+            <ImageRefContainerMobile isValid={!!form[`imageCode${index}`]} >{!!form[`imageCode${index}`]?('OK'):('')}</ImageRefContainerMobile>
         </Container>                
     )
 }
 const Container = styled.div`
     display: flex;
     width: 76vw;
+    @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+    }
 `
 const InputStyle = styled.input`
     
@@ -75,4 +80,29 @@ const ImageRefContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 768px) {
+        display: none;
+    }
+`
+const ImageRefContainerMobile = styled.div`
+    margin-top: 1.8vh;
+    height: 4vh;
+    width: 30%;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    border: ${props => props.isValid ? ("1px solid #00DF30"):("1px solid #1D1D1D")};
+    transition: all ease 1s; 
+    display: none;
+
+    outline: none;
+    background: #1D1D1D;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 768px) {
+        display: inherit;
+    }
 `

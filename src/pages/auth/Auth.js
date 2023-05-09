@@ -71,6 +71,10 @@ const LoginContainer = styled.div`
     width: 30vw;
     background-color: #171717;
     border-radius: 5px;
+    @media (max-width: 768px) {
+        width: 100%;
+        border-radius: 0px;
+    }
 `
 const Title = styled.div`
     font-size: 11rem;

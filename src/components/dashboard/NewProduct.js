@@ -153,12 +153,19 @@ const Container = styled.div`
     justify-content: start;
     flex-direction: column;
     color: #FFFFFF;
+    @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+    }
     
 `
 const Title = styled.h3`
     font-size: 1.8rem;
     margin-bottom: 2vh;
     margin-top: 4.5vh;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 `
 const InputStyle = styled.input`
     
@@ -185,6 +192,9 @@ const InputStyle = styled.input`
     }
     :focus {
         border-bottom: 0.5vh #ffcc00 solid;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
     }
     
 `
