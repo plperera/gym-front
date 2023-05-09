@@ -42,7 +42,6 @@ export default function ProductPage() {
 
         setForm({ ...form, ...initialBody, ...images })
     }
-
     async function SaveAndEdit (){
         if ( editMode ) {
             
@@ -54,6 +53,7 @@ export default function ProductPage() {
                 const response = await api.PutProduct({token, body})
                 if( response.status === 200){
                     toast.dark("Produto alterado com Sucesso !!")
+                    setEditMode(false)
                 }
     
             } catch (error) {
@@ -64,6 +64,19 @@ export default function ProductPage() {
         } else {
             setEditMode(true)
         }
+    }
+    async function deleteProduct(){
+        try {   
+            console.log(token)
+            const response = await api.DeleteProduct({token, body:{ id: product.id }})
+            if( response.status === 200){
+                toast.dark("Produto apagado com Sucesso !!")
+            }
+
+        } catch (error) {
+            toast.error("Ocorreu um erro, tente atualizar a página")
+            console.log(error)
+        } 
     }
     function formatBody(){
         const arrayImagens = []
@@ -96,7 +109,7 @@ export default function ProductPage() {
 
         getProduct()
 
-    }, [])
+    }, [editMode])
 
     useEffect(() => {
 
@@ -130,7 +143,11 @@ export default function ProductPage() {
                     />
                 </ProductBuyInfoContainer>
 
-                <ButtonStyle onClick={() => SaveAndEdit()}>{ editMode ? ("Salvar"):("Editar")}</ButtonStyle>
+                <ButtonContainer>   
+                    <ButtonStyle onClick={() => SaveAndEdit()}>{ editMode ? ("Salvar"):("Editar")}</ButtonStyle>
+                    <DeleteButtonStyle onClick={() => deleteProduct()}>Deletar</DeleteButtonStyle>
+                </ButtonContainer>
+                
             </Container>      
         ):(<Container>Carregando...</Container>)
         
@@ -174,8 +191,8 @@ const ProductBuyInfoContainer = styled.div`
     }
 `
 const ButtonStyle = styled.div`
-    width: 50%;
-    height: 10vh;
+    width: 35%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,4 +210,33 @@ const ButtonStyle = styled.div`
         font-weight: bold;
         animation: none;
     }
+`
+const DeleteButtonStyle = styled.div`
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    user-select: none;
+    
+    background-color: #4A0000;
+    border: 2px solid;
+    border-color: #FF0000;
+    cursor: pointer;
+
+    :hover{
+        background-color: #FF0000;
+        color: #171717;
+        font-weight: bold;
+        animation: none;
+    }
+`
+const ButtonContainer = styled.div`
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 `
