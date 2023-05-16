@@ -1,6 +1,16 @@
 import styled from "styled-components"
+import { useCustomForm } from "../../hooks/useCustomForms";
 
 export default function FormularioLandingPage(){
+
+    const [ form, handleForm ] = useCustomForm();
+    
+    function SendForm(){
+        console.log(form)
+        if (form?.nome && form?.email && form?.telefone && form?.estado && form?.cidade && form?.assunto && form?.mensagem){
+            console.log(form)
+        } 
+    }
 
     return (
         
@@ -9,27 +19,27 @@ export default function FormularioLandingPage(){
                 <LeftSide>
                     <ContainerInput>
                         <h4>Nome</h4>
-                        <input/>
+                        <input name="nome" value={form.nome} onChange={handleForm}/>
                     </ContainerInput>
 
                     <ContainerInput>
                         <h4>Email</h4>
-                        <input/>
+                        <input name="email" value={form.email} onChange={handleForm}/>
                     </ContainerInput>
 
                     <ContainerInput>
                         <h4>Telefone/Celular</h4>
-                        <input/>
+                        <input name="telefone" value={form.telefone} onChange={handleForm}/>
                     </ContainerInput>
 
                     <ContainerInput>
                         <h4>Estado</h4>
-                        <input/>
+                        <input name="estado" value={form.estado} onChange={handleForm}/>
                     </ContainerInput>
 
                     <ContainerInput>
                         <h4>Cidade</h4>
-                        <input/>
+                        <input name="cidade" value={form.cidade} onChange={handleForm}/>
                     </ContainerInput>
 
                 </LeftSide>
@@ -37,16 +47,16 @@ export default function FormularioLandingPage(){
                 <RightSide>
                     <ContainerInput>
                         <h4>Assunto</h4>
-                        <input/>
+                        <input name="assunto" value={form.assunto} onChange={handleForm}/>
                     </ContainerInput>
                     
                     <ContainerMensagem>
                         <h4>Mensagem</h4>
-                        <textarea/>
+                        <textarea name="mensagem" value={form.mensagem} onChange={handleForm}/>
                     </ContainerMensagem>                
                 </RightSide>
             </SubContainer>
-            <ButtonContainer><ButtonStyle>Enviar</ButtonStyle></ButtonContainer>
+            <ButtonContainer><ButtonStyle onClick={() => SendForm()}>Enviar</ButtonStyle></ButtonContainer>
         </Container>
 
     )

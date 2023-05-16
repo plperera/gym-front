@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'http://http://154.49.246.124/4000';
 
 function GetAllProducts() {
   return axios.get(`${BASE_URL}/product`);
