@@ -27,7 +27,7 @@ export default function Menu (){
                 </LogoContainer>
                 
                 <OptionsContainer>
-                    <div>Quem Somos </div>
+                    <div>Quem Somssos </div>
                     <div onClick={ () => changeScreen("products") }>Catálogo</div>
                     <div>Contato</div>
                 </OptionsContainer>

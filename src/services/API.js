@@ -1,6 +1,8 @@
 import axios from 'axios';
-const BASE_URL = 'http://http://154.49.246.124/4000';
-
+const BASE_URL = process.env.REACT_APP_BACK_END_URL;
+console.log(process.env)
+console.log(process.env.REACT_APP_BACK_END_URL)
+console.log(BASE_URL)
 function GetAllProducts() {
   return axios.get(`${BASE_URL}/product`);
 }

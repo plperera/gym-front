@@ -13,6 +13,7 @@ import { useContext } from "react"
 import Dashboard from "./pages/dashboard/Dashboard"
 import useToken from "./hooks/useToken"
 import ProductEdit from "./components/dashboard/ProductEdit"
+import NotFound from "./pages/notFound/NotFound"
 
 export default function App (){
  
@@ -37,6 +38,7 @@ export default function App (){
                     <BrowserRouter>
                         <Menu/>
                         <Routes>
+                            
                             <Route path="/" element={<HomePage/>} />
                             <Route path="/product/:productName" element={<ProductPage/>} />
                             <Route path="/products" element={<AllProducts/>} />
@@ -44,7 +46,8 @@ export default function App (){
                             <Route path="/admin/login" element={<Login/>} />
                             <Route path="/admin/dashboard" element={<ProtectedRouteGuard><Dashboard/></ProtectedRouteGuard>} />
                             <Route path="/admin/dashboard/product/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
-
+                            <Route path="*" element={<NotFound />} />
+                            
                         </Routes>
                         <Footer/>
                     </BrowserRouter>
