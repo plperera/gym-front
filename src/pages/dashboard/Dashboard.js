@@ -13,9 +13,7 @@ import NewCategoty from "../../components/dashboard/NewCatogory";
 export default function Dashboard (){
 
     const [pageSelector, setPageSelector] = useState(false)
-    useEffect(()=>{
-        console.log(pageSelector)
-    }, [pageSelector])
+
     return(
         <>       
             <Container>

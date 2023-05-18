@@ -16,7 +16,6 @@ export default function ProductPage() {
     const [ imageAmount, setImageAmount ] = useState()
     const { productId } = useParams();
     const token = useToken()
-    console.log(product)
     async function getProduct(){
         const response = await api.GetProductById(productId)
         setStartValueForms(response.data)
@@ -46,7 +45,6 @@ export default function ProductPage() {
         if ( editMode ) {
             
             const body = formatBody()
-            console.log("body:", body)
     
             try {   
 
@@ -58,7 +56,6 @@ export default function ProductPage() {
     
             } catch (error) {
                 toast.error("Verifique os valores !!")
-                console.log(error)
             } 
 
         } else {
@@ -67,7 +64,6 @@ export default function ProductPage() {
     }
     async function deleteProduct(){
         try {   
-            console.log(token)
             const response = await api.DeleteProduct({token, body:{ id: product.id }})
             if( response.status === 200){
                 toast.dark("Produto apagado com Sucesso !!")
@@ -75,7 +71,6 @@ export default function ProductPage() {
 
         } catch (error) {
             toast.error("Ocorreu um erro, tente atualizar a página")
-            console.log(error)
         } 
     }
     function formatBody(){
@@ -110,14 +105,6 @@ export default function ProductPage() {
         getProduct()
 
     }, [editMode])
-
-    useEffect(() => {
-
-        console.log(form)
-
-    }, [form])
-
-
 
     return(
         product ? (

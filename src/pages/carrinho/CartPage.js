@@ -42,7 +42,6 @@ export default function CartPage() {
         try {
             getProducts(userData.cart)
         } catch (error) {
-            console.log(error)
         }
 
     }, [refresh])

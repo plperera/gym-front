@@ -23,7 +23,6 @@ export default function NewCategoty (){
 
         } catch (error) {
             toast.error("Verifique o nome da Categoria !!")
-            console.log(error)
         } 
     }
 

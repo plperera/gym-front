@@ -6,10 +6,18 @@ export default function FormularioLandingPage(){
     const [ form, handleForm ] = useCustomForm();
     
     function SendForm(){
-        console.log(form)
         if (form?.nome && form?.email && form?.telefone && form?.estado && form?.cidade && form?.assunto && form?.mensagem){
-            console.log(form)
+            sendWhatsapp()            
         } 
+    }
+    function sendWhatsapp(){
+        const { nome, email, telefone, estado, cidade, assunto, mensagem } = form 
+
+        const formatedText = `Olá, meu nome é ${nome}, de ${cidade} - ${estado.toUpperCase()}\ntelefone: ${telefone} \nemail: ${email} \n\n- ${assunto.toUpperCase()} -\n${mensagem}`
+
+        const encodedMessage = encodeURIComponent(formatedText);
+        const whatsappURL = `https://wa.me/${5535997226735}?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
     }
 
     return (

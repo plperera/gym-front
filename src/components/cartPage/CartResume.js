@@ -20,7 +20,6 @@ export default function CartResume({userData, form}) {
         const clientInfo = `\nEm nome de ${nome}, para entregar em ${address} \n\nDados para Contato: \nEmail: ${email} \nTelefone: ${cellphone}`
 
         const finalMessage = message + messageItems + "\n" + clientInfo + "\n"
-        console.log(finalMessage)
 
         if (nome && form?.city && form?.estado && cellphone && email && messageItems){
             const encodedMessage = encodeURIComponent(finalMessage);

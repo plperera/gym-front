@@ -7,7 +7,6 @@ export default function useLocalStorage(key, initialValue) {
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       /* eslint-disable-next-line no-console */
-      console.log(error);
       return initialValue;
     }
   });
@@ -19,7 +18,6 @@ export default function useLocalStorage(key, initialValue) {
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
       /* eslint-disable-next-line no-console */
-      console.log(error);
     }
   };
 

@@ -11,7 +11,6 @@ export default function ManageProducts (){
         const response = await api.GetAllProducts()
         const fake = [...response.data, ...response.data, ...response.data, ...response.data, ...response.data, ...response.data]
         setAllProducts(fake)
-        console.log(response.data)
     }
 
     useEffect(() => {

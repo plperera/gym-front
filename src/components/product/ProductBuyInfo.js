@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 export default function ProductBuyInfo({category, title, rate, productId}) {
     const { setUserData, userData } = useContext(UserContext)
-    console.log(userData)
+
     function AddToCart(){
 
         let newCart
@@ -24,11 +24,7 @@ export default function ProductBuyInfo({category, title, rate, productId}) {
             newCart = [{id: productId, amount: 1}]
             toast.dark("✅ Produto adcionado no Carrinho")
         }
-        
-        
         setUserData({cart: newCart})
-        console.log(newCart)
-        console.log(userData)
     }
     
     return(

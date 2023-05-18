@@ -14,17 +14,17 @@ export default function Footer (){
 
                     <ReactIconContainer>
                         <div>
-                            <FaInstagram/>
+                            <a href="https://www.instagram.com/upfitness_lavras/"><FaInstagram/></a>
                         </div>
-                        <div>
+                        {/* <div>
                             <FaFacebookSquare/>
-                        </div>
+                        </div> */}
                         <div>
-                            <FaWhatsapp/>
+                            <a href="https://wa.me/5535997226735"><FaWhatsapp/></a>
                         </div>
-                        <div>
+                        {/* <div>
                             <AiOutlineLink/>
-                        </div>
+                        </div> */}
                     </ReactIconContainer>
 
                     <LocalDetails>{localizacao}</LocalDetails>
@@ -35,7 +35,7 @@ export default function Footer (){
             <SubInfoContainer>
                 <div>
                     <div>Todos os direitos reservados © 2023</div>
-                    <SubTitle>Feito por DG GREEN DIGITAL</SubTitle>
+                   <SubTitle><a href="https://adsinfinite.com.br/">Feito por DG GREEN DIGITAL</a></SubTitle>
                 </div>        
             </SubInfoContainer>  
         </>

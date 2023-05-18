@@ -17,7 +17,18 @@ export default function Menu (){
         });
         
     }
-
+    function moveTo(){
+        navigate(`/`)
+        setTimeout(() => {
+            
+            window.scrollTo({
+                top: 2950,
+                behavior: 'smooth', 
+            });
+            
+          }, 500);
+        
+    }
     return(
         <OutContainer>
             <Container>
@@ -27,9 +38,9 @@ export default function Menu (){
                 </LogoContainer>
                 
                 <OptionsContainer>
-                    <div>Quem Somssos </div>
+                    <div onClick={ () => changeScreen("") }>Quem Somos </div>
                     <div onClick={ () => changeScreen("products") }>Catálogo</div>
-                    <div>Contato</div>
+                    <div onClick={ () => moveTo() }>Contato</div>
                 </OptionsContainer>
 
                 <CardContainer onClick={ () => changeScreen("cart") }>

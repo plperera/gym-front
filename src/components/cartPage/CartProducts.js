@@ -6,7 +6,6 @@ import { BsFillTrashFill } from 'react-icons/bs';
 export default function CartProducts({ setUserData, userData, products, setRefresh, refresh }) {
 
     const [timeDelete, setTimeDelete] = useState(false)
-    console.log(userData)
 
     function updateAmount(type, i) {
         const updatedProducts = [...userData.cart]; 

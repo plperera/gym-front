@@ -8,7 +8,6 @@ export default function ImageEdit ({ images, editMode, setForm, form, imageAmoun
 
     const [current, setCurrent] = useState(0);
     const length = images.length;
-    console.log("images:", imageAmount)
 
     useEffect(()=>{
 

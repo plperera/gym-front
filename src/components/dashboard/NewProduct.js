@@ -19,7 +19,6 @@ export default function NewProduct (){
     async function sendForm(){
 
         const body = formatBody()
-        console.log("body:", body)
 
         try {           
             const response = await api.CreateProduct({body, token})
@@ -30,7 +29,6 @@ export default function NewProduct (){
 
         } catch (error) {
             toast.error("Verifique os valores !!")
-            console.log(error)
         } 
 
     }
@@ -72,10 +70,8 @@ export default function NewProduct (){
     async function GetAllCategories(){
         try {
             const response = await api.GetAllCategories()
-            console.log(response.data)
             setCategories(response.data)
         } catch (error) {
-            console.log(error)
         } 
     }
     function verifyInput(e) {

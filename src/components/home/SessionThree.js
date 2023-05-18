@@ -24,8 +24,6 @@ export default function SessionThree (){
         setHasSelect(option)
     }
 
-    console.log(filterProducts)
-
     async function getProducts(){
         const response = await api.GetAllProducts()
         const secondResponse = await api.GetAllCategories()
