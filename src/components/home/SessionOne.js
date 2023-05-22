@@ -35,14 +35,13 @@ export default function SessionOne (){
 
                     <Title>
                         <span>
-                            <HighlightYellow>Você</HighlightYellow> está pronto para elevar seu treino ao 
-                            <HighlightYellow> próximo nível</HighlightYellow> e conquistar o <HighlightYellow>corpo dos seus sonhos</HighlightYellow>?</span>
+                            Monta sua <HighlightYellow>academia, Studio e Condomínio. </HighlightYellow>
+                        </span>
                     </Title>
 
                     <SubTitle>
-                        Dê adeus aos treinos monótonos e limitados. Com nossas <HighlightYellow fontSize={"28px"}>Máquinas de Alta Qualidade</HighlightYellow>, 
-                        você terá acesso a uma variedade de exercícios que trabalham todos os grupos musculares, 
-                        <HighlightYellow fontSize={"28px"}> garantindo</HighlightYellow> um treino <HighlightYellow fontSize={"28px"}>completo e eficiente</HighlightYellow>.
+                        Equipamentos Fitness <HighlightYellow fontSize={"28px"}>importados</HighlightYellow> com Alta Performance, Inovação e Qualidade. 
+                        Entregamos um Melhor <HighlightYellow fontSize={"28px"}>Custo-Benefício</HighlightYellow> com Tecnologia Importada.
                     </SubTitle>  
 
                     <div>
@@ -84,7 +83,7 @@ const ReactIconContainer = styled.div`
 `
 const Title = styled.div`
     span{
-        font-size: 32px;
+        font-size: 36px;
     }
 
     @media (max-width: 768px) {
