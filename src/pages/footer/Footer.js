@@ -14,7 +14,7 @@ export default function Footer (){
 
                     <ReactIconContainer>
                         <div>
-                            <a href="https://www.instagram.com/upfitness_lavras/"><FaInstagram/></a>
+                            <a href="https://www.instagram.com/upsportsbrasil/"><FaInstagram/></a>
                         </div>
                         {/* <div>
                             <FaFacebookSquare/>
@@ -60,6 +60,7 @@ const InfoContainer = styled.div`
     justify-content: space-between;
     img {
         height: 7vh;
+        background-blend-mode: screen;
     }
     @media (max-width: 768px) {
         img {

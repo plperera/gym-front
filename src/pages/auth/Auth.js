@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import LogoUpFitness from "../../assets/images/logo.png"
 import { FaUserShield } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
 import { useCustomForm } from "../../hooks/useCustomForms";
