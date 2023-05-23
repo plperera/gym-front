@@ -9,8 +9,7 @@ export default function ManageProducts (){
     const [allProducts, setAllProducts] = useState(false)
     async function getProducts(){
         const response = await api.GetAllProducts()
-        const fake = [...response.data, ...response.data, ...response.data, ...response.data, ...response.data, ...response.data]
-        setAllProducts(fake)
+        setAllProducts(response.data)
     }
 
     useEffect(() => {
