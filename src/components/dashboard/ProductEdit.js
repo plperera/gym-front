@@ -8,6 +8,7 @@ import ProductInfoEdit from "./ProductInfoEdit";
 import { useCustomForm } from "../../hooks/useCustomForms";
 import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductPage() {
     const [ product, setProduct ] = useState(undefined);
@@ -15,6 +16,7 @@ export default function ProductPage() {
     const [ form, handleForm, setForm ] = useCustomForm();
     const [ imageAmount, setImageAmount ] = useState()
     const { productId } = useParams();
+    const navigate = useNavigate()
     const token = useToken()
     async function getProduct(){
         const response = await api.GetProductById(productId)
@@ -131,6 +133,7 @@ export default function ProductPage() {
                 </ProductBuyInfoContainer>
 
                 <ButtonContainer>   
+                    <ButtonBackStyle onClick={() => navigate("/admin/dashboard")}>Voltar para o Dashboard</ButtonBackStyle>
                     <ButtonStyle onClick={() => SaveAndEdit()}>{ editMode ? ("Salvar"):("Editar")}</ButtonStyle>
                     <DeleteButtonStyle onClick={() => deleteProduct()}>Deletar</DeleteButtonStyle>
                 </ButtonContainer>
@@ -226,4 +229,26 @@ const ButtonContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+`
+const ButtonBackStyle = styled.div`
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    user-select: none;
+    
+    background-color: #020202;
+    border: 2px solid;
+    border-color: #FFFFFF;
+    cursor: pointer;
+
+    :hover{
+        background-color: #232323;
+        color: #FFFFFF;
+        border-color: #D6D6D6;
+        animation: none;
+    }
 `

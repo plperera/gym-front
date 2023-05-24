@@ -14,7 +14,7 @@ export default function ProductBuyInfo({category, title, rate, productId}) {
 
             if( userData.cart.filter(e => e.id === productId).length === 0){
                 newCart = [...userData?.cart, {id: productId, amount: 1}]
-                toast.dark("✅ Produto adcionado no Carrinho")
+                toast.dark("✅ Produto adicionado no Carrinho")
             } else {
                 newCart = [...userData?.cart]
                 toast.dark("⚠️  O Produto ja esta no Carrinho  ⚠️")
@@ -22,7 +22,7 @@ export default function ProductBuyInfo({category, title, rate, productId}) {
            
         } else {
             newCart = [{id: productId, amount: 1}]
-            toast.dark("✅ Produto adcionado no Carrinho")
+            toast.dark("✅ Produto adicionado no Carrinho")
         }
         setUserData({cart: newCart})
     }

@@ -4,7 +4,7 @@ export default function CartResume({userData, form}) {
     const handleClick = () => {
 
         const message = "Olá, gostaria de fazer um orçamento sem compromisso para os seguinte(s) item(s): \n\n";
-        const phoneNumber = "35999351124"
+        const phoneNumber = "5535997226735"
 
         const nome = form?.name;
         const address = `${form?.city}, ${form?.estado}`;
