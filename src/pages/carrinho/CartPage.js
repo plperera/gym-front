@@ -23,12 +23,10 @@ export default function CartPage() {
         }
       
         const updatedCart = await Promise.all(
-          array.map(async (item) => {
+          array.filter(async (item) => {
             const response = await api.GetProductById(item.id);
             if (response.data !== [] && response.data !== undefined) {
               return { ...item, productData: response.data };
-            } else {
-              return item;
             }
           })
         );

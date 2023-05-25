@@ -38,11 +38,11 @@ export default function CartProducts({ setUserData, userData, products, setRefre
         
         <Container>
             {
-            userData.cart.map((e,i) => 
+            userData?.cart?.map((e,i) => 
                 <ProductContainer willDelete={i === timeDelete} key={i}>
 
                     <LeftSideProduct>
-                        <img src={`https://drive.google.com/uc?export=view&id=${userData.cart[i].productData.imagensProduto[0].imageRef}`} alt={userData.cart[i].productData.nome} />
+                        <img src={`https://drive.google.com/uc?export=view&id=${userData?.cart[i]?.productData?.imagensProduto[0]?.imageRef}`} alt={userData.cart[i].productData.nome} />
                     </LeftSideProduct>
 
                     <RightSideProduct>
