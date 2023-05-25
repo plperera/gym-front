@@ -21,16 +21,21 @@ export default function CartPage() {
         if (!array) {
           return;
         }
-      
-        const updatedCart = await Promise.all(
-          array.filter(async (item) => {
+    
+        const productPromises = array.map(async (item) => {
             const response = await api.GetProductById(item.id);
             if (response.data !== [] && response.data !== undefined) {
               return { ...item, productData: response.data };
             }
-          })
-        );
-      
+            else {
+                return null;
+            }
+        });
+    
+        const productsWithDetails = await Promise.all(productPromises);
+    
+        const updatedCart = productsWithDetails.filter(item => item !== null);
+    
         setUserData({ ...userData, cart: updatedCart });
         setProducts([userData])
     }

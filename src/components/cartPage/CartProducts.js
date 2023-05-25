@@ -18,7 +18,6 @@ export default function CartProducts({ setUserData, userData, products, setRefre
                 updatedProducts[i].amount -= 1; 
             }
         }
-        console.log(updatedProducts)
         setUserData({ ...userData, cart: updatedProducts });
     }
     function removeProduct(index) {
