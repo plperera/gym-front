@@ -4,7 +4,7 @@ import styled from "styled-components"
 export default function ImageFormsEdit ({setForm, form, index}){
 
     function extractImageCode({ target: { value, name } }) {
-        const regex = /^https:\/\/drive\.google\.com\/file\/d\/([^\/]+)\//;
+        const regex = /^https:\/\/drive\.google\.com\/file\/d\/([^/]+)\//;
         const match = value.match(regex);
       
         setForm({

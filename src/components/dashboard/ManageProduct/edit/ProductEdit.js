@@ -1,12 +1,12 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react";
 
-import api from "../../services/API"
+import api from "../../../../services/API"
 import { useParams } from "react-router-dom";
 import ImageEdit from "./ImageEdit";
 import ProductInfoEdit from "./ProductInfoEdit";
-import { useCustomForm } from "../../hooks/useCustomForms";
-import useToken from "../../hooks/useToken";
+import { useCustomForm } from "../../../../hooks/useCustomForms";
+import useToken from "../../../../hooks/useToken";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 

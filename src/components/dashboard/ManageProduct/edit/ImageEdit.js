@@ -9,7 +9,7 @@ export default function ImageEdit ({ images, editMode, setForm, form, imageAmoun
     const [current, setCurrent] = useState(0);
     const length = images.length;
 
-    useEffect(()=>{
+    useEffect(() => {
 
       const image = images.map(e => {return {imageCode: e.imageRef}})
 

@@ -1,8 +1,8 @@
 import { toast } from "react-toastify";
 import styled from "styled-components"
-import { useCustomForm } from "../../hooks/useCustomForms";
-import api from "../../services/API";
-import useToken from "../../hooks/useToken";
+import { useCustomForm } from "../../../hooks/useCustomForms";
+import api from "../../../services/API";
+import useToken from "../../../hooks/useToken";
 
 export default function NewCategoty (){
 

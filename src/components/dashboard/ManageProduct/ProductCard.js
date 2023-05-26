@@ -1,8 +1,4 @@
 import styled from "styled-components"
-import { AiFillEdit } from 'react-icons/ai';
-import { BsCheck2Square } from 'react-icons/bs';
-import { useState } from "react";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductCard ({ name, id, imagem }){
@@ -13,7 +9,7 @@ export default function ProductCard ({ name, id, imagem }){
             <Container onClick={() => navigate(`/admin/dashboard/product/${id}`)}>
                 
                 <ImageContainer>
-                    <img src={imagePath}/>
+                    <img src={imagePath} alt=""/>
                 </ImageContainer>
 
                 <TextContainer>

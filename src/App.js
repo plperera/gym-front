@@ -12,7 +12,7 @@ import AuthContext, { AuthProvider } from "./context/AuthContext"
 import { useContext } from "react"
 import Dashboard from "./pages/dashboard/Dashboard"
 import useToken from "./hooks/useToken"
-import ProductEdit from "./components/dashboard/ProductEdit"
+import ProductEdit from "./components/dashboard/ManageProduct/edit/ProductEdit"
 import NotFound from "./pages/notFound/NotFound"
 
 export default function App (){
@@ -46,6 +46,7 @@ export default function App (){
                             <Route path="/admin/login" element={<Login/>} />
                             <Route path="/admin/dashboard" element={<ProtectedRouteGuard><Dashboard/></ProtectedRouteGuard>} />
                             <Route path="/admin/dashboard/product/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
+                            <Route path="/admin/dashboard/category/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
                             <Route path="*" element={<NotFound />} />
                             
                         </Routes>

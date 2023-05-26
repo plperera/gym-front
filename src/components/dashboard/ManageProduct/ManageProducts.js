@@ -1,12 +1,12 @@
 import styled from "styled-components"
 import ProductCard from "./ProductCard"
 import { useState } from "react"
-import api from "../../services/API"
+import api from "../../../services/API"
 import { useEffect } from "react"
 
 export default function ManageProducts (){
 
-    const [allProducts, setAllProducts] = useState(false)
+    const [allProducts, setAllProducts] = useState(undefined)
     async function getProducts(){
         const response = await api.GetAllProducts()
         setAllProducts(response.data)

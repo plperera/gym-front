@@ -1,12 +1,11 @@
 import { toast } from "react-toastify";
 import styled from "styled-components"
-import { useCustomForm } from "../../hooks/useCustomForms";
-import ImageForms from "./ImageForms";
+import { useCustomForm } from "../../../hooks/useCustomForms";
 import { useState } from "react";
-import api from "../../services/API";
+import api from "../../../services/API";
 import { useEffect } from "react";
 import CategoriesSelector from "./CategoriesSelector";
-import useToken from "../../hooks/useToken";
+import useToken from "../../../hooks/useToken";
 import ImageFormsEdit from "./ImageForms";
 
 export default function NewProduct (){
@@ -32,7 +31,6 @@ export default function NewProduct (){
         } 
 
     }
-
     function formatBody(){
         const arrayCategorias = []
         const arrayImagens = []
@@ -59,7 +57,6 @@ export default function NewProduct (){
             imagens: arrayImagens.reverse()
         }
     }
-    
     function AddMoreImages(){
         if (imageAmount.length < 5){
             setImageAmount([...imageAmount, imageAmount.length])

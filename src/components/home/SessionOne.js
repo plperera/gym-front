@@ -35,7 +35,7 @@ export default function SessionOne (){
 
                     <Title>
                         <span>
-                            Monta sua <HighlightYellow>academia, Studio e Condomínio. </HighlightYellow>
+                            Monte sua <HighlightYellow>academia, Studio e Condomínio. </HighlightYellow>
                         </span>
                     </Title>
 

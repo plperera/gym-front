@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default function ProductInfoEdit({title, rate, productId, largura, comprimento, altura, peso, editMode, setForm, form, handleForm}) { 
+export default function ProductInfoEdit({title, rate, largura, comprimento, altura, peso, editMode, setForm, form, handleForm}) { 
     
     return(
         editMode ? (
