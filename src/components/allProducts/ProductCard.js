@@ -8,10 +8,10 @@ export default function ProductCard({imagem, titulo, subtitulo, id}){
 
     const location = useLocation();
     const isAdminRoute = location.pathname.includes("/admin");
-    
+
     function changeScreen(){
 
-        isAdminRoute ? (navigate(`/admin/dashboard/${id}`)):(navigate(`/product/${id}`))
+        isAdminRoute ? (navigate(`/admin/dashboard/product/${id}`)):(navigate(`/product/${id}`))
         
         window.scrollTo({
             top: 0,
