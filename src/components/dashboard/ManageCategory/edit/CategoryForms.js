@@ -46,7 +46,7 @@ export default function CategoryForms() {
             try {   
                 const body = {
                     type: form?.type,
-                    id: categoryId
+                    id: Number(categoryId)
                 }
                 console.log(body)
                 const response = await api.PutCategory({body, token})
@@ -63,7 +63,7 @@ export default function CategoryForms() {
 
     async function deleteCategory(){
         try {   
-            const response = await api.DeleteCategory({token, body:{ id: categoryId }})
+            const response = await api.DeleteCategory({token, body:{ id: Number(categoryId) }})
             if( response.status === 200){
                 toast.dark("Produto apagado com Sucesso !!")
                 Redirect()

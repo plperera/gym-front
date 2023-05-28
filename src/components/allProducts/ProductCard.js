@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 export default function ProductCard({imagem, titulo, subtitulo, id}){
@@ -6,10 +6,13 @@ export default function ProductCard({imagem, titulo, subtitulo, id}){
     const imagePath = `https://drive.google.com/uc?export=view&id=${imagem}`
     const navigate = useNavigate()
 
+    const location = useLocation();
+    const isAdminRoute = location.pathname.includes("/admin");
+    
     function changeScreen(){
 
-        navigate(`/product/${id}`)
-
+        isAdminRoute ? (navigate(`/admin/dashboard/${id}`)):(navigate(`/product/${id}`))
+        
         window.scrollTo({
             top: 0,
             behavior: 'smooth', 

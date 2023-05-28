@@ -47,7 +47,7 @@ export default function App (){
                             <Route path="/admin/dashboard" element={<ProtectedRouteGuard><Dashboard/></ProtectedRouteGuard>} />
                             <Route path="/admin/dashboard/product/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
                             <Route path="/admin/dashboard/category/:categoryId" element={<ProtectedRouteGuard><CategoryForms/></ProtectedRouteGuard>} />
-                            <Route path="/admin/dashboard/products" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
+                            <Route path="/admin/dashboard/products" element={<ProtectedRouteGuard><AllProducts/></ProtectedRouteGuard>} />
                             <Route path="*" element={<NotFound />} />
                             
                         </Routes>
@@ -63,7 +63,7 @@ function ProtectedRouteGuard({ children }) {
     const token = useToken();
 
     if (!token) {
-       //return <Navigate to="/admin/login" />;
+       return <Navigate to="/admin/login" />;
     }
   
     return <>{children}</>;
