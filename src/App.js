@@ -14,9 +14,9 @@ import Dashboard from "./pages/dashboard/Dashboard"
 import useToken from "./hooks/useToken"
 import ProductEdit from "./components/dashboard/ManageProduct/edit/ProductEdit"
 import NotFound from "./pages/notFound/NotFound"
+import CategoryForms from "./components/dashboard/ManageCategory/edit/CategoryForms"
 
 export default function App (){
- 
     return(
         <>
             
@@ -43,10 +43,11 @@ export default function App (){
                             <Route path="/product/:productName" element={<ProductPage/>} />
                             <Route path="/products" element={<AllProducts/>} />
                             <Route path="/cart" element={<CartPage/>} />
-                            <Route path="/admin/login" element={<Login/>} />
+                            <Route path="/auth/login" element={<Login/>} />
                             <Route path="/admin/dashboard" element={<ProtectedRouteGuard><Dashboard/></ProtectedRouteGuard>} />
                             <Route path="/admin/dashboard/product/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
-                            <Route path="/admin/dashboard/category/:productId" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
+                            <Route path="/admin/dashboard/category/:categoryId" element={<ProtectedRouteGuard><CategoryForms/></ProtectedRouteGuard>} />
+                            <Route path="/admin/dashboard/products" element={<ProtectedRouteGuard><ProductEdit/></ProtectedRouteGuard>} />
                             <Route path="*" element={<NotFound />} />
                             
                         </Routes>
