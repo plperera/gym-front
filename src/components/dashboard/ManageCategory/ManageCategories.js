@@ -6,26 +6,15 @@ import CategoryCard from "./CategoryCard"
 
 export default function ManageCategories (){
 
-    const [allCategories, setAllCategories] = useState([
-        {tipo:"Maquinas do tipo A", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1},
-        {tipo:"okdwkdo", id:1}
-    ])
-    async function getProducts(){
+    const [allCategories, setAllCategories] = useState(undefined)
+    async function getCategories(){
         const response = await api.GetAllCategories()
         setAllCategories(response.data)
     }
 
     useEffect(() => {
 
-        getProducts()
+        getCategories()
 
     }, [])
     return(
