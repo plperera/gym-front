@@ -48,11 +48,13 @@ export default function CategoryForms() {
                     type: form?.type,
                     id: categoryId
                 }
+                console.log(body)
                 const response = await api.PutCategory({body, token})
                 if( response.status === 200){
                     toast.dark("Produto alterado com Sucesso !!")
                     
                 }
+                console.log(response)
             } catch (error) {
                 toast.error("Verifique os valores !!")
             } 
