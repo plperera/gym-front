@@ -34,7 +34,7 @@ export default function SessionThree (){
 
     useEffect(() => {
 
-        //getProducts()
+        getProducts()
 
     }, [])
 
