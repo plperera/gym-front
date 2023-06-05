@@ -9,20 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function SessionThree (){
 
     const [hasSelect, setHasSelect] = useState(undefined)
-    const teste = {
-        tipo:"Linha Articulada Premium",
-    }
-    const [categories, setCategories] = useState([
-        teste,
-        teste,
-        teste,
-        teste,
-        teste,
-        teste,
-        teste,
-        teste,
-        teste,
-    ])
+    const [categories, setCategories] = useState(undefined)
     const [filterProducts, setFilterProducts] = useState(undefined)
     const [ products, setProducts ] = useState(undefined);
     const navigate = useNavigate()
