@@ -17,8 +17,9 @@ export default function CategoriesSelector ({name, id, setForm, form}){
 const Container = styled.div`
     display: flex;
     width: 10vw;
-    height: 5vh;
-    font-size: 1.4rem;
+    height: 8vh;
+    font-size: 13px;
+    text-align: center;
     color: "#FFFFFF";
     border: 2px solid;
     font-weight: ${props => props.isSelected ? ("700"):("500")};
