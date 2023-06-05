@@ -50,14 +50,15 @@ const OptionsContainer = styled.div`
     }
 `
 const ProductOption = styled.div`
-    width: 8vw;
+    width: 9vw;
     height: 5vh;
+    padding-bottom: 1.4vh;
+    font-size: 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 15px;
     user-select: none;
 
     color: ${props => props.color};

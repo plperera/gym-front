@@ -35,7 +35,7 @@ export default function ProductCard({imagem, titulo, subtitulo, id}){
 
 const Container = styled.div`  
 
-    height: 38vh;
+    height: 45vh;
     width: 13vw;
     border-radius: 10px;
     
@@ -59,15 +59,15 @@ const Container = styled.div`
 
         h4 {
             color: #ffcc00;
-            font-size: 14.5px;
+            font-size: 12.5px;
         }
     }
 
     img {
         color: #8A8A8A;
-        min-height: 90px;
+        //min-height: 90px;
         max-width: 100%;
-        max-height: 55%;
+        max-height: 65%;
     }
     div {
         display: flex;
@@ -81,9 +81,9 @@ const Container = styled.div`
     }
 `
 const Title = styled.div`
-    height: 15%;
+    height: 25%;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     justify-content: start !important;
     font-weight: 700;
     text-align: center;
@@ -94,8 +94,8 @@ const Title = styled.div`
     }
 `
 const SubTitle = styled.div`
-    font-size: 12px;
-    height: 22%;
+    font-size: 11px;
+    height: 20%;
     width: 95%;
     color: #3B3B3B;
     text-align: center;
@@ -106,7 +106,7 @@ const SubTitle = styled.div`
 
 `
 const Button = styled.h4`
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     width: 100%;
     height: 8%;

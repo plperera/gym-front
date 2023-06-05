@@ -9,7 +9,20 @@ import { useNavigate } from "react-router-dom";
 export default function SessionThree (){
 
     const [hasSelect, setHasSelect] = useState(undefined)
-    const [categories, setCategories] = useState(undefined)
+    const teste = {
+        tipo:"Linha Articulada Premium",
+    }
+    const [categories, setCategories] = useState([
+        teste,
+        teste,
+        teste,
+        teste,
+        teste,
+        teste,
+        teste,
+        teste,
+        teste,
+    ])
     const [filterProducts, setFilterProducts] = useState(undefined)
     const [ products, setProducts ] = useState(undefined);
     const navigate = useNavigate()
@@ -34,7 +47,7 @@ export default function SessionThree (){
 
     useEffect(() => {
 
-        getProducts()
+        //getProducts()
 
     }, [])
 
@@ -160,14 +173,15 @@ const ContainerOption = styled.div`
     } 
 `
 const ProductOption = styled.div`
-    width: 8vw;
+    width: 9vw;
     height: 5vh;
+    padding-bottom: 1.4vh;
+    font-size: 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.2rem;
 
     color: ${props => props.color};
     border-radius: ${props => props.borderRadius};
