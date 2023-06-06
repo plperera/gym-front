@@ -1,6 +1,15 @@
+import { useState } from "react"
 import styled from "styled-components"
 
 export default function Filter({hasSelect, categories, selectOption}) {
+
+    const [showAll, setShowAll] = useState(5)
+
+    function changeShowCase(){
+        showAll > 5 ?(setShowAll(5)):(setShowAll(999))
+        return
+    }
+
     return(
         <>
             <Title>{ hasSelect ? (hasSelect):("Todos os Produtos")}</Title>
@@ -8,7 +17,7 @@ export default function Filter({hasSelect, categories, selectOption}) {
                 {
                     categories ? (
                         categories.map((e,i) => {
-                            if (i <= 5){
+                            if (i <= showAll){
                                 return <ProductOption 
                                     onClick={() => selectOption(e.tipo)} 
                                     background={(hasSelect !== e.tipo) ? ("none"):("#ffcc00")}
@@ -24,7 +33,7 @@ export default function Filter({hasSelect, categories, selectOption}) {
                         })
                     ):(<></>)  
                 }
-
+            <ShowCaseIcon onClick={() => changeShowCase()}>{showAll > 5 ?('-'):('+')}</ShowCaseIcon>
             </OptionsContainer>    
         </>
           
@@ -35,10 +44,12 @@ export default function Filter({hasSelect, categories, selectOption}) {
 const OptionsContainer = styled.div`
     width: 100%;
     min-height: 50%;
+    max-height: 100%;
     border-radius: 5px;
+    flex-wrap: wrap;
 
-    padding-left:3vw;
-    padding-right:3vw;
+    padding: 1vh 3vw;
+    row-gap: 1vh;
 
     display: flex;
     align-items: center;   
@@ -87,5 +98,27 @@ const Title = styled.div`
     @media (max-width: 768px) {
         font-size: 26px;
         margin-bottom: 0vh;
+    }
+`
+const ShowCaseIcon = styled.div`
+    width: 40px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    right: 10vw;
+    bottom: 78vh;
+    cursor: pointer;
+    user-select: none;
+    @media (max-width: 768px) {
+        width: 25px;
+        height: 60px;
+        font-size: 12px;
     }
 `

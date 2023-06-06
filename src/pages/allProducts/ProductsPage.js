@@ -8,8 +8,9 @@ export default function ProductsPage() {
 
     const [hasSelect, setHasSelect] = useState(undefined)
     const [categories, setCategories] = useState(undefined)
-    const [filterProducts, setFilterProducts] = useState(undefined)
     const [ products, setProducts ] = useState(undefined);
+    const [filterProducts, setFilterProducts] = useState(products)
+    
 
     function selectOption(option){
         if(option === hasSelect){
@@ -78,7 +79,8 @@ const Container = styled.div`
 `
 const CategoryMenuContainer = styled.div`
     width: 100%;
-    height: 15vh;
+    min-height: 15vh;
+    max-height: 100%;
 `
 const ContentContainer = styled.div`
     width: 100%;
