@@ -79,13 +79,9 @@ export default function ProductPage() {
         const arrayImagens = []
 
         imageAmount.forEach((e,i) => {
-            if(e?.imageCode.length > 20){
-                arrayImagens.push({nome: e.imageCode})
-            }
-            if(form[`imageCode${i}`].length > 20){
+            if(form[`imageCode${i}`].length > 20 && form[`imageCode${i}`] !== undefined){
                 arrayImagens.push({nome: form[`imageCode${e}`]})
             }
-            
         })
 
         return {
