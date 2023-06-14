@@ -40,7 +40,7 @@ export default function SessionOne (){
                     </Title>
 
                     <SubTitle>
-                        Equipamentos Fitness <HighlightYellow fontSize={"28px"}>importados</HighlightYellow> com Alta Performance, Inovação e Qualidade. 
+                        Equipamentos Fitness <HighlightYellow fontSize={"28px"}>Equipamentos Fitness com tecnologia nacional e importada</HighlightYellow> com Alta Performance, Inovação e Qualidade. 
                         Entregamos um Melhor <HighlightYellow fontSize={"28px"}>Custo-Benefício</HighlightYellow> com Tecnologia Importada.
                     </SubTitle>  
 
