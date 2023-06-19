@@ -35,7 +35,7 @@ export default function ProductsPage() {
     async function getProducts(){
         const response = await api.GetAllProducts()
         const secondResponse = await api.GetAllCategories()
-        setCategories(secondResponse.data.slice(0, 7))
+        setCategories(secondResponse.data)
         
         setFilterProducts(response.data)
         setProducts(response.data)

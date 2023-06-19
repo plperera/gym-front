@@ -13,7 +13,7 @@ export default function HomePage (){
         <Container>
             <SessionOne/>
 
-            <SessionTwo/>
+            {/* <SessionTwo/> */}
           
             <SessionThree/>
 
