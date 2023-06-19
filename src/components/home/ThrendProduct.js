@@ -99,7 +99,7 @@ const SubTitle = styled.div`
     width: 95%;
     color: #3B3B3B;
     text-align: center;
-    justify-content: start !important;
+    justify-content: center !important;
     @media (max-width: 768px) {
         font-size: 9px;
         width: 100%; 
