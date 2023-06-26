@@ -35,13 +35,14 @@ export default function SessionOne (){
 
                     <Title>
                         <span>
-                            Monte sua <HighlightYellow>academia, Studio e Condomínio. </HighlightYellow>
+                            Monte sua <HighlightYellow>Academia, Studio e Condomínio </HighlightYellow>
                         </span>
                     </Title>
 
                     <SubTitle>
-                        Equipamentos Fitness <HighlightYellow fontSize={"28px"}>Equipamentos Fitness com tecnologia nacional e importada</HighlightYellow> com Alta Performance, Inovação e Qualidade. 
-                        Entregamos um Melhor <HighlightYellow fontSize={"28px"}>Custo-Benefício</HighlightYellow> com Tecnologia Importada.
+                        <HighlightYellow fontSize={"28px"}>Equipamentos Fitness com  tecnologia importada</HighlightYellow> de Alta Performance, Inovação e Qualidade. 
+                        Entregamos o melhor  <HighlightYellow fontSize={"28px"}>custo-benefício</HighlightYellow> do mercado.
+
                     </SubTitle>  
 
                     <div>
