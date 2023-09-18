@@ -18,26 +18,29 @@ export default function CartPage() {
     const navigate = useNavigate()
 
     async function getProducts(array) {
-        if (!array) {
-          return;
+        try {
+            if (!array) {
+                return;
+            }
+        
+            const productPromises = array.map(async (item) => {
+                const response = await api.GetProductById(item.id);
+                if (response.data && response.data !== undefined) {
+                return { ...item, productData: response.data };
+                }
+                else {
+                    return null;
+                }
+            });
+        
+            const productsWithDetails = await Promise.all(productPromises);
+        
+            const updatedCart = productsWithDetails.filter(item => item !== null);
+        
+            setUserData({ ...userData, cart: updatedCart });
+            setProducts([userData])
+        } catch (error) { 
         }
-    
-        const productPromises = array.map(async (item) => {
-            const response = await api.GetProductById(item.id);
-            if (response.data !== [] && response.data !== undefined) {
-              return { ...item, productData: response.data };
-            }
-            else {
-                return null;
-            }
-        });
-    
-        const productsWithDetails = await Promise.all(productPromises);
-    
-        const updatedCart = productsWithDetails.filter(item => item !== null);
-    
-        setUserData({ ...userData, cart: updatedCart });
-        setProducts([userData])
     }
 
     useEffect(() => {
@@ -47,6 +50,7 @@ export default function CartPage() {
         } catch (error) {
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [refresh])
 
     useEffect(() => {

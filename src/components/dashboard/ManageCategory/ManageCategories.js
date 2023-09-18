@@ -8,8 +8,12 @@ export default function ManageCategories (){
 
     const [allCategories, setAllCategories] = useState(undefined)
     async function getCategories(){
-        const response = await api.GetAllCategories()
-        setAllCategories(response.data)
+        try {
+            const response = await api.GetAllCategories()
+            setAllCategories(response.data)
+        } catch (error) {
+        }
+        
     }
 
     useEffect(() => {
@@ -20,7 +24,7 @@ export default function ManageCategories (){
     return(
         allCategories ? (
             <Container>
-                {allCategories.map(e => <CategoryCard type={e.tipo} id={e.id}/>)}
+                {allCategories.map(e => <CategoryCard type={e?.tipo} id={e?.id}/>)}
             </Container>      
         ):(<Container>Carregando...</Container>)
     )

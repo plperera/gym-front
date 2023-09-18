@@ -2,8 +2,6 @@ import styled from "styled-components"
 import SessionFour from "../../components/home/SessionFour"
 import SessionOne from "../../components/home/SessionOne"
 import SessionThree from "../../components/home/SessionThree"
-import SessionTwo from "../../components/home/SessionTwo"
-
 
 export default function HomePage (){
     //"Leve sua rotina de treino para o próximo nível com UpFitness!"

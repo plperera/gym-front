@@ -1,11 +1,8 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react";
-
 import api from "../../../../services/API"
 import { useParams } from "react-router-dom";
-
 import useToken from "../../../../hooks/useToken";
-
 import { useNavigate } from "react-router-dom";
 import { useCustomForm } from "../../../../hooks/useCustomForms";
 import { toast } from "react-toastify";
@@ -20,7 +17,6 @@ export default function CategoryForms() {
     const token = useToken()
 
     async function getCategory(){
-        
         try {
             const response = await api.GetCategoryById(categoryId)
             if( response.status === 200){
@@ -28,13 +24,13 @@ export default function CategoryForms() {
             }
         } catch (error) {
             toast.error("Ocorreu um erro inesperado")
-        }
-        
+        } 
     }
     useEffect(() => {
 
         getCategory()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     function Redirect(){
         toast.dark("Redirecionando para o dashboard")

@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import { FaUserShield } from 'react-icons/fa';
-import { AiOutlineLink } from 'react-icons/ai';
 import { useCustomForm } from "../../hooks/useCustomForms";
 import api from "../../services/API";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
@@ -22,12 +21,12 @@ export default function Login (){
 
     async function submitForm(){
         try {
-        const response = await api.Login(form);
-        if (response.status === 200) {
-            setAuthData(response.data)
-            navigate("/admin/dashboard")
-            toast.dark("Login feito com sucesso")
-        } 
+            const response = await api.Login(form);
+            if (response.status === 200) {
+                setAuthData(response.data)
+                navigate("/admin/dashboard")
+                toast.dark("Login feito com sucesso")
+            } 
         } catch (error) {
             toast.error("Verifique os dados de Login")
             console.error(`Erro ao fazer login: ${error}`);

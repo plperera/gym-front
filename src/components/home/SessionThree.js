@@ -25,28 +25,28 @@ export default function SessionThree (){
     }
 
     async function getProducts(){
-        const response = await api.GetAllProducts()
-        const secondResponse = await api.GetAllCategories()
-        setCategories(secondResponse.data)
-        setProducts(response.data)
-        setFilterProducts(response.data)
+        try {
+            const response = await api.GetAllProducts()
+            const secondResponse = await api.GetAllCategories()
+            setCategories(secondResponse.data)
+            setProducts(response.data)
+            setFilterProducts(response.data)
+        } catch (error) {
+            //console.log(error)
+        }
     }
 
     useEffect(() => {
-
         getProducts()
-
     }, [])
 
     function changeScreen(to){
-
         navigate(`/${to}`)
 
         window.scrollTo({
             top: 0,
             behavior: 'smooth', 
-        });
-        
+        }); 
     }
 
     return(
@@ -64,14 +64,14 @@ export default function SessionThree (){
                             categories.map((e,i) => {
                                 if (i <= 5){
                                     return <ProductOption 
-                                        onClick={() => selectOption(e.tipo)} 
-                                        background={(hasSelect !== e.tipo) ? ("none"):("#ffcc00")}
-                                        border={(hasSelect !== e.tipo) ? ("1px solid #ffcc00;"):("none")}
-                                        borderRadius={(hasSelect !== e.tipo) ? ("0px"):("50px")}
-                                        bold={(hasSelect !== e.tipo) ? ("400"):("700")}
-                                        color={(hasSelect !== e.tipo) ? ("#FFFFFF"):("#000000")}
+                                        onClick={() => selectOption(e?.tipo)} 
+                                        background={(hasSelect !== e?.tipo) ? ("none"):("#ffcc00")}
+                                        border={(hasSelect !== e?.tipo) ? ("1px solid #ffcc00;"):("none")}
+                                        borderRadius={(hasSelect !== e?.tipo) ? ("0px"):("50px")}
+                                        bold={(hasSelect !== e?.tipo) ? ("400"):("700")}
+                                        color={(hasSelect !== e?.tipo) ? ("#FFFFFF"):("#000000")}
                                     >
-                                        {e.tipo}
+                                        {e?.tipo}
                                     </ProductOption>
                                     }
                                 return <></>

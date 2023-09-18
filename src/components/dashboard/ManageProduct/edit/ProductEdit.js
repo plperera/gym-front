@@ -27,9 +27,9 @@ export default function ProductPage() {
 
         let images = {}
 
-        productResponse?.imagensProduto.map((e, i) => {
+        productResponse?.imagensProduto.map((e, i) => 
             images = ({ ...images, [`link${i}`]: `https://drive.google.com/file/d/${e.imageRef}/view?usp=share_link` } )
-        })
+        )
         
         const initialBody = {
             name: productResponse.nome,
@@ -102,6 +102,7 @@ export default function ProductPage() {
 
         getProduct()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editMode])
 
     return(

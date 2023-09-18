@@ -7,9 +7,13 @@ import { useEffect } from "react"
 export default function ManageProducts (){
 
     const [allProducts, setAllProducts] = useState(undefined)
+    
     async function getProducts(){
-        const response = await api.GetAllProducts()
-        setAllProducts(response.data)
+        try {
+            const response = await api.GetAllProducts()
+            setAllProducts(response.data)
+        } catch (error) {  
+        } 
     }
 
     useEffect(() => {

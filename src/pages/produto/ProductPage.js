@@ -13,29 +13,33 @@ export default function ProductPage() {
     const { productName } = useParams();
 
     async function getProduct(){
-        const response = await api.GetProductById(productName)
-        setProduct(response.data)
+        try {
+            const response = await api.GetProductById(productName)
+            setProduct(response.data)
+        } catch (error) {
+        }   
     }
 
     useEffect(() => {
 
         getProduct()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(
         product ? (
             <Container>
                 <ProductImageContainer>
-                    <ImageCarrosel images={product.imagensProduto}/>
+                    <ImageCarrosel images={product?.imagensProduto}/>
                 </ProductImageContainer>
 
                 <ProductBuyInfoContainer>
-                    <ProductBuyInfo category={product.categoriasProduto[0].categorias.tipo} title={product.nome} rate={product.rate} productId={product.id}/>
+                    <ProductBuyInfo category={product?.categoriasProduto[0].categorias.tipo} title={product?.nome} rate={product?.rate} productId={product?.id}/>
                 </ProductBuyInfoContainer>
 
                 <ProductEspecifcationContainer>
-                    <ProductEspecifcation largura={product.largura} comprimento={product.comprimento} altura={product.altura} peso={product.peso} arrayCategorias={product.categoriasProduto}/>
+                    <ProductEspecifcation largura={product?.largura} comprimento={product?.comprimento} altura={product?.altura} peso={product?.peso} arrayCategorias={product?.categoriasProduto}/>
                 </ProductEspecifcationContainer>
             </Container>      
         ):(<Container>Carregando...</Container>)

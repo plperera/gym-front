@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default function ProductInfoEdit({title, rate, largura, comprimento, altura, peso, editMode, setForm, form, handleForm}) { 
+export default function ProductInfoEdit({title, rate, largura, comprimento, altura, peso, editMode, form, handleForm}) { 
     
     return(
         editMode ? (
@@ -87,31 +87,6 @@ const InfoRate = styled.div`
             font-size: 29px;
             margin-right: 1.3vw;
         }
-    }
-`
-const Button = styled.div`
-    font-size: 18px;
-    width: 20vw;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #44B145;
-    color: #FFFFFF;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 3vh;
-    :hover{
-        background-color: #50D152;
-        color: #FFFFFF;
-        transform: translateY(-0.7vh);
-    }
-    @media (max-width: 768px) {
-        width: 100%;
-        height: 7vh;
-        font-size: 20px;
-        margin-bottom: 1vh;
     }
 `
 const SubContainer = styled.div`

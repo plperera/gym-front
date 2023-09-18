@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import LogoUpFitness from "../../assets/images/logo.png"
-import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
-import { AiOutlineLink } from 'react-icons/ai';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer (){
     const localizacao = "R. Kenedy dos Santos, 20A - Jardim Bela Vista, Lavras - MG, 37205-210"
@@ -10,7 +9,7 @@ export default function Footer (){
         
             <Container>
                 <InfoContainer>
-                    <img src={LogoUpFitness}/>
+                    <img src={LogoUpFitness} alt=""/>
 
                     <ReactIconContainer>
                         <div>

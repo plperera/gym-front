@@ -15,6 +15,7 @@ export default function ImageEdit ({ images, editMode, setForm, form, imageAmoun
 
       setImageAmount(image)
       
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
 
